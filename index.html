@@ -1,0 +1,2978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPPSC Prelims Current Affairs 2026 — Live Quiz Poll &amp; Multi-User Scorecard</title>
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --surface-alt: #f8fafc;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-soft: #eef2ff;
+      --primary-border: #c7d2fe;
+      --success: #059669;
+      --success-soft: #ecfdf5;
+      --success-border: #a7f3d0;
+      --danger: #dc2626;
+      --danger-soft: #fef2f2;
+      --danger-border: #fecaca;
+      --warning: #d97706;
+      --warning-soft: #fffbeb;
+      --warning-border: #fde68a;
+      --dark: #0f172a;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.18);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button, input {
+      font-family: inherit;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Sticky Header */
+    .app-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      color: var(--text);
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #4f46e5, #3730a3);
+      color: #fff;
+      font-weight: 900;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+    }
+    .btn-success:hover {
+      background: #047857;
+    }
+
+    .btn-warning {
+      background: var(--warning-soft);
+      color: #92400e;
+      border-color: var(--warning-border);
+    }
+    .btn-warning:hover {
+      background: #fef3c7;
+    }
+
+    .btn-amber {
+      background: #f59e0b;
+      color: #fff;
+    }
+    .btn-amber:hover {
+      background: #d97706;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: #fff;
+    }
+    .btn-dark:hover {
+      background: #1e293b;
+    }
+
+    .btn-outline {
+      background: var(--surface);
+      color: var(--text);
+      border-color: var(--border-strong);
+    }
+    .btn-outline:hover {
+      background: var(--surface-alt);
+    }
+
+    .btn-soft-indigo {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+    .btn-soft-indigo:hover {
+      background: #e0e7ff;
+    }
+
+    .btn-danger-soft {
+      background: var(--danger-soft);
+      color: var(--danger);
+      border-color: var(--danger-border);
+    }
+    .btn-danger-soft:hover {
+      background: #fee2e2;
+    }
+
+    .btn-lg {
+      padding: 13px 20px;
+      font-size: 14px;
+      border-radius: 14px;
+    }
+
+    /* Live Presence Bar */
+    .presence-bar {
+      background: var(--dark);
+      color: #fff;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .presence-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6ee7b7;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.35); }
+    }
+
+    .user-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 11px;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Entry / Dashboard Layout */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tag-badge {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1.22;
+      margin-bottom: 8px;
+    }
+
+    .hero-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .entry-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border-strong);
+      background: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      outline: none;
+    }
+
+    .text-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.14);
+    }
+
+    .text-input.error {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.14);
+    }
+
+    .rules-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .rules-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .rule-pill {
+      padding: 9px 12px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 800;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+    }
+
+    /* Sections Overview Grid */
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 680px) {
+      .sections-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sec-info-box {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .saved-banner {
+      background: var(--warning-soft);
+      border: 1px solid var(--warning-border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Quiz Arena */
+    .quiz-topbar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .sec-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .sec-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .sec-tab-btn {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sec-tab-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .arena-grid {
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 920px) {
+      .arena-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Telegram Poll Card */
+    .poll-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .poll-header {
+      background: var(--dark);
+      color: #fff;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .q-badge {
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: var(--primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .timer-pill {
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #6ee7b7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .timer-pill.danger {
+      background: rgba(239, 68, 68, 0.22);
+      border-color: rgba(248, 113, 113, 0.55);
+      color: #fca5a5;
+    }
+
+    .timer-track {
+      width: 100%;
+      height: 5px;
+      background: #e2e8f0;
+    }
+
+    .timer-fill {
+      height: 100%;
+      background: var(--primary);
+      transition: width 0.35s linear;
+    }
+
+    .timer-fill.danger {
+      background: var(--danger);
+    }
+
+    .poll-body {
+      padding: 20px;
+    }
+
+    .question-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.55;
+      white-space: pre-line;
+      margin-bottom: 18px;
+    }
+
+    .options-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .option-card {
+      border: 2px solid var(--border);
+      border-radius: 15px;
+      overflow: hidden;
+      background: var(--surface-alt);
+      transition: border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .option-card:not(.revealed):hover {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    .option-card.correct {
+      border-color: var(--success);
+      background: var(--success-soft);
+    }
+
+    .option-card.wrong {
+      border-color: var(--danger);
+      background: var(--danger-soft);
+    }
+
+    .option-btn {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 13px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .vote-bar-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(148, 163, 184, 0.22);
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+    }
+
+    .option-card.correct .vote-bar-bg {
+      background: rgba(16, 185, 129, 0.22);
+    }
+
+    .option-card.wrong .vote-bar-bg {
+      background: rgba(239, 68, 68, 0.2);
+    }
+
+    .opt-left {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .opt-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #94a3b8;
+      background: #fff;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .option-card.correct .opt-circle {
+      background: var(--success);
+      border-color: var(--success);
+      color: #fff;
+    }
+
+    .option-card.wrong .opt-circle {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #fff;
+    }
+
+    .opt-label {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .vote-count-pill {
+      position: relative;
+      z-index: 1;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border-strong);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .voters-strip {
+      padding: 8px 14px;
+      border-top: 1px solid rgba(203, 213, 225, 0.65);
+      background: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .voter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid var(--primary-border);
+      background: var(--primary-soft);
+      color: #3730a3;
+    }
+
+    .voter-badge.me {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: #fff;
+    }
+
+    .voter-badge.right {
+      background: var(--success-soft);
+      border-color: var(--success-border);
+      color: #065f46;
+    }
+
+    .explanation-box {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+    }
+
+    .poll-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* CBT Palette */
+    .palette-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      max-height: 390px;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-top: 12px;
+    }
+
+    .pal-btn {
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .pal-btn.correct {
+      background: var(--success);
+      border-color: var(--success);
+      color: #fff;
+    }
+
+    .pal-btn.wrong {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #fff;
+    }
+
+    .pal-btn.current {
+      outline: 2.5px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    /* Scoreboard Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background: var(--dark);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 13px 14px;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rank-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+      background: #e2e8f0;
+      color: var(--text);
+    }
+
+    .rank-1 { background: #fbbf24; color: #0f172a; }
+    .rank-2 { background: #cbd5e1; color: #0f172a; }
+    .rank-3 { background: #b45309; color: #fff; }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      max-width: 440px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-wide {
+      max-width: 900px;
+      max-height: 90vh;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-wide-head {
+      background: var(--dark);
+      color: #fff;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-wide-body {
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .kpi-card {
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      text-align: center;
+    }
+
+    /* Toast */
+    .toast-stack {
+      position: fixed;
+      top: 66px;
+      right: 16px;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 310px;
+      width: calc(100% - 32px);
+      pointer-events: none;
+    }
+
+    .toast-item {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+      animation: slideIn 0.2s ease-out;
+    }
+
+    .toast-item.success { background: var(--success); }
+    .toast-item.error { background: var(--danger); }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notifications -->
+  <div id="toast-stack" class="toast-stack"></div>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <button type="button" class="brand-btn" onclick="goDashboard()">
+        <div class="brand-badge">UPPSC</div>
+        <div>
+          <div class="brand-title">UPPSC Prelims Current Affairs 2026</div>
+          <div class="brand-sub">Live Quiz Poll (100 Qs) &bull; Voter Badges &bull; Multi-User Scorecards</div>
+        </div>
+      </button>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-soft-indigo" onclick="copyInviteLink()">
+          <span>🔗 Room: <strong id="hdr-room-code">UPPSC2026</strong></span>
+          <span>Copy Invite</span>
+        </button>
+        <button type="button" class="btn btn-amber" onclick="openScoreboard()">
+          🏆 Scoreboard (<span id="hdr-player-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Online Participant Presence Strip -->
+  <div id="presence-bar" class="presence-bar hidden">
+    <div class="presence-inner">
+      <span class="live-pill">
+        <span class="pulse-dot"></span>
+        <span>LIVE ONLINE (<span id="live-user-count">1</span>)</span>
+      </span>
+      <div id="live-users-list" style="display:flex;align-items:center;gap:8px;"></div>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <main class="main-wrap">
+
+    <!-- =================================================================== -->
+    <!-- VIEW 1: ENTRY & DASHBOARD                                           -->
+    <!-- =================================================================== -->
+    <section id="view-dashboard">
+      <div class="card" style="margin-bottom:18px;">
+        <div class="hero-grid">
+          <div>
+            <span class="tag-badge">UPPSC Prelims 2026 Live Mock Test</span>
+            <h1 class="hero-title">Current Affairs 2026 Live Quiz Poll &amp; Multi-User Scorecard</h1>
+            <p class="hero-desc">
+              Attempt 100 authentic UPPSC-pattern Current Affairs 2026 questions across 4 sections (25 questions each). See live vote counts and colored voter name badges under every option in real time, pause and resume anytime, and inspect every participant's ranked scorecard.
+            </p>
+          </div>
+
+          <div class="entry-box">
+            <div class="form-row">
+              <div>
+                <label class="field-label" for="inp-name">Your Full Name <span style="color:#dc2626;">*</span></label>
+                <input id="inp-name" class="text-input" type="text" maxlength="30" placeholder="Enter your name..." />
+              </div>
+              <div>
+                <label class="field-label" for="inp-room">Room Code</label>
+                <input id="inp-room" class="text-input" type="text" maxlength="20" value="UPPSC2026" style="text-transform:uppercase;color:#4f46e5;" />
+              </div>
+            </div>
+            <p id="name-err" class="hidden" style="color:#dc2626;font-size:12px;font-weight:800;margin-bottom:10px;">
+              Please enter your Full Name to join the live quiz room.
+            </p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button type="button" class="btn btn-primary" style="flex:1;padding:11px 16px;" onclick="enterRoom()">
+                Save Name &amp; Join Room
+              </button>
+              <button type="button" class="btn btn-outline" style="padding:11px 14px;" onclick="copyInviteLink()">
+                🔗 Copy Invite Link
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rules-strip">
+          <div class="rule-pill" style="background:#ecfdf5;border-color:#a7f3d0;color:#065f46;">✓ Right Answer: +1.33 Marks</div>
+          <div class="rule-pill" style="background:#fef2f2;border-color:#fecaca;color:#991b1b;">✕ Wrong Answer: -0.33 Marks</div>
+          <div class="rule-pill" style="background:#eef2ff;border-color:#c7d2fe;color:#3730a3;">⏱ 40 Sec / Question (Instant Next)</div>
+          <div class="rule-pill" style="background:#fffbeb;border-color:#fde68a;color:#92400e;">👥 Live Voter Names &amp; Scorecards</div>
+        </div>
+      </div>
+
+      <!-- Full Mock Test Card -->
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+          <span class="tag-badge" style="margin-bottom:0;background:#4f46e5;color:#fff;border-color:#4f46e5;">
+            100 Questions &bull; 4 Sections &times; 25 Questions
+          </span>
+          <span id="dash-participant-badge" style="font-size:12px;font-weight:800;color:#475569;background:#f1f5f9;padding:5px 12px;border-radius:999px;">
+            0 participants in room
+          </span>
+        </div>
+
+        <h2 style="font-size:21px;font-weight:900;margin-bottom:4px;">
+          UPPSC Prelims Current Affairs 2026 Full Mock Test
+        </h2>
+        <p style="font-size:13px;color:#475569;">
+          UPPSC statement-based, match-the-list, and factual Current Affairs 2026 questions across four balanced sections:
+        </p>
+
+        <div class="sections-grid">
+          <div class="sec-info-box">
+            <span style="color:#4f46e5;">Section I (Q. 1–25):</span> UP Special, UP Budget 2026–27 &amp; Ramsar Sites
+          </div>
+          <div class="sec-info-box">
+            <span style="color:#4f46e5;">Section II (Q. 26–50):</span> National Affairs, Polity, Census 2027 &amp; Union Budget 2026–27
+          </div>
+          <div class="sec-info-box">
+            <span style="color:#4f46e5;">Section III (Q. 51–75):</span> Defence, Science, Space &amp; Environment 2026
+          </div>
+          <div class="sec-info-box">
+            <span style="color:#4f46e5;">Section IV (Q. 76–100):</span> International Summits, Awards, Sports &amp; Important Days 2026
+          </div>
+        </div>
+
+        <!-- Saved Progress Banner (Shown when paused or left mid-way) -->
+        <div id="saved-progress-box" class="saved-banner hidden">
+          <div>
+            <div style="font-size:13px;font-weight:900;color:#92400e;">⏸ Saved Progress Available</div>
+            <div id="saved-progress-meta" style="font-size:12px;font-weight:700;color:#78350f;margin-top:2px;">
+              Question 1 of 100 &bull; 0 Answered &bull; Question Timer: 40s &bull; Total Time: 00:00
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" class="btn btn-primary" onclick="continueQuiz()">
+              ▶ Continue Where Left Off
+            </button>
+            <button type="button" class="btn btn-outline" onclick="restartQuiz()">
+              🔄 Start Again from Start
+            </button>
+          </div>
+        </div>
+
+        <!-- Default Start Button -->
+        <div id="default-start-box" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+          <button type="button" class="btn btn-primary btn-lg" style="flex:1;min-width:240px;" onclick="startQuiz()">
+            Start 100-Question Live Quiz Poll →
+          </button>
+          <button type="button" class="btn btn-dark btn-lg" onclick="openScoreboard()">
+            View Common Scoreboard 🏆
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 2: LIVE TELEGRAM-STYLE QUIZ POLL ARENA                         -->
+    <!-- =================================================================== -->
+    <section id="view-quiz" class="hidden">
+      <!-- Top Quiz Status Bar -->
+      <div class="quiz-topbar">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span class="q-badge">UPPSC 2026 LIVE POLL</span>
+          <div style="font-size:12.5px;font-weight:700;">
+            Candidate: <strong id="quiz-user-label" style="color:#4f46e5;">User</strong> &bull;
+            Total Time: <strong id="quiz-elapsed-label" style="font-family:monospace;">00:00</strong> &bull;
+            Net Score: <strong id="quiz-score-label" style="color:#059669;">0.00</strong>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button type="button" class="btn btn-warning" onclick="pauseQuiz()">
+            ⏸ Pause Quiz
+          </button>
+          <button type="button" class="btn btn-success" onclick="submitQuiz()">
+            ✓ Submit &amp; Scorecard
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Section Tabs -->
+      <div class="sec-tabs" id="sec-tabs-bar">
+        <button type="button" class="sec-tab-btn active" data-sec="0" onclick="jumpToSection(0)">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;opacity:0.85;">Section I (Q. 1–25)</div>
+          <div style="font-size:12px;font-weight:800;">UP Special, Budget &amp; Ramsar</div>
+        </button>
+        <button type="button" class="sec-tab-btn" data-sec="1" onclick="jumpToSection(1)">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;opacity:0.75;">Section II (Q. 26–50)</div>
+          <div style="font-size:12px;font-weight:800;">Polity, Census &amp; Union Budget</div>
+        </button>
+        <button type="button" class="sec-tab-btn" data-sec="2" onclick="jumpToSection(2)">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;opacity:0.75;">Section III (Q. 51–75)</div>
+          <div style="font-size:12px;font-weight:800;">Defence, Space &amp; Environment</div>
+        </button>
+        <button type="button" class="sec-tab-btn" data-sec="3" onclick="jumpToSection(3)">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;opacity:0.75;">Section IV (Q. 76–100)</div>
+          <div style="font-size:12px;font-weight:800;">Summits, Awards, Sports &amp; Days</div>
+        </button>
+      </div>
+
+      <!-- Poll Card + CBT Navigator -->
+      <div class="arena-grid">
+        <!-- Telegram Poll Card -->
+        <div class="poll-card">
+          <div class="poll-header">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span id="poll-q-num" class="q-badge">Q. 1 / 100</span>
+              <span id="poll-sec-name" style="font-size:12px;font-weight:700;color:#cbd5e1;">Section I</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="font-size:11px;color:#94a3b8;font-weight:700;">Question Timer:</span>
+              <span id="poll-q-timer" class="timer-pill">40s</span>
+            </div>
+          </div>
+          <div class="timer-track">
+            <div id="poll-timer-bar" class="timer-fill" style="width:100%;"></div>
+          </div>
+
+          <div class="poll-body">
+            <div id="poll-q-text" class="question-text">Loading question...</div>
+
+            <div id="poll-options" class="options-stack"></div>
+
+            <div id="poll-exp-box" class="explanation-box hidden">
+              <div style="font-size:11px;font-weight:900;text-transform:uppercase;color:#3730a3;margin-bottom:4px;">
+                💡 UPPSC Exam Explanation
+              </div>
+              <div id="poll-exp-text" style="font-size:13px;color:#1e293b;font-weight:600;line-height:1.55;"></div>
+            </div>
+
+            <div class="poll-footer">
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn btn-outline" onclick="prevQuestion()">← Previous</button>
+                <button type="button" class="btn btn-soft-indigo" onclick="simulateFriendVote()">
+                  + Simulate Friend Vote
+                </button>
+              </div>
+
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="btn btn-outline" onclick="nextQuestion()">Skip</button>
+                <button type="button" id="btn-next-q" class="btn btn-primary" style="padding:10px 18px;" onclick="nextQuestion()">
+                  Next Question →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CBT 100-Question Palette -->
+        <aside class="palette-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <span style="font-size:12px;font-weight:900;text-transform:uppercase;color:#1e293b;">
+              Question Palette (1–100)
+            </span>
+            <span id="palette-summary" style="font-size:12px;font-weight:800;color:#4f46e5;">
+              0 / 100 Answered
+            </span>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:800;margin-top:8px;">
+            <span style="color:#059669;">● Correct</span>
+            <span style="color:#dc2626;">● Wrong</span>
+            <span style="color:#64748b;">● Unanswered</span>
+          </div>
+
+          <div id="palette-grid" class="palette-grid"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: COMMON RANKED SCOREBOARD                                    -->
+    <!-- =================================================================== -->
+    <section id="view-scoreboard" class="hidden">
+      <div class="card" style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+        <div>
+          <span class="tag-badge" style="margin-bottom:6px;background:#fef3c7;color:#92400e;border-color:#fde68a;">
+            Live Multi-User Merit List
+          </span>
+          <h2 style="font-size:22px;font-weight:900;">Common Scoreboard &amp; Participant Scorecards</h2>
+          <p style="font-size:12.5px;color:#475569;margin-top:2px;">
+            Ranked by Net Score (+1.33 / -0.33) and faster Total Time Taken. Click <strong>View Full Scorecard</strong> on any participant to inspect their complete 100-question result.
+          </p>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="goDashboard()">
+          ← Back to Dashboard
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Participant Name</th>
+              <th>Status</th>
+              <th>Sec I–IV Right</th>
+              <th>Right / Wrong</th>
+              <th>Net Score</th>
+              <th>Time Taken</th>
+              <th>Scorecard</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard-tbody">
+            <tr>
+              <td colspan="8" style="text-align:center;padding:32px;color:#64748b;font-weight:700;">
+                No participants have attempted the quiz yet. Enter your name and start the test!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1: PAUSE QUIZ MODAL                                             -->
+  <!-- ===================================================================== -->
+  <div id="modal-pause" class="modal-backdrop hidden">
+    <div class="modal-box">
+      <span class="tag-badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;">
+        Quiz Paused &amp; Auto-Saved
+      </span>
+      <h3 style="font-size:20px;font-weight:900;margin-bottom:6px;">Your Progress is Saved</h3>
+      <p style="font-size:13px;color:#475569;margin-bottom:18px;">
+        Your current question, 40-second timer, answers, and elapsed clock are saved safely in this browser.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <button type="button" class="btn btn-primary" style="padding:12px;" onclick="resumeQuiz()">
+          ▶ Resume Quiz Now
+        </button>
+        <button type="button" class="btn btn-outline" style="padding:12px;" onclick="saveAndExit()">
+          💾 Save &amp; Exit to Dashboard
+        </button>
+        <button type="button" class="btn btn-danger-soft" style="padding:11px;" onclick="restartQuizFromModal()">
+          🔄 Start Again from Start
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 2: INDIVIDUAL PARTICIPANT FULL SCORECARD MODAL                  -->
+  <!-- ===================================================================== -->
+  <div id="modal-scorecard" class="modal-backdrop hidden" onclick="if(event.target===this) closeScorecard()">
+    <div class="modal-box modal-wide">
+      <div class="modal-wide-head">
+        <div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;color:#fbbf24;">
+            UPPSC Prelims Current Affairs 2026 &bull; Official Scorecard
+          </div>
+          <h3 id="sc-modal-title" style="font-size:18px;font-weight:900;margin-top:2px;">
+            Participant Result
+          </h3>
+        </div>
+        <button type="button" class="btn btn-outline" style="background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.2);" onclick="closeScorecard()">
+          ✕ Close
+        </button>
+      </div>
+      <div id="sc-modal-body" class="modal-wide-body"></div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. COMPLETE 100 AUTHENTIC UPPSC-PATTERN CURRENT AFFAIRS 2026 QUESTIONS
+    //    4 SECTIONS x 25 QUESTIONS = 100 DISTINCT QUESTIONS
+    // =========================================================================
+    var SECTIONS = [
+      "Section I: UP Special, UP Budget 2026–27 & Ramsar Sites",
+      "Section II: National Affairs, Polity, Census 2027 & Union Budget 2026–27",
+      "Section III: Defence, Science, Space & Environment 2026",
+      "Section IV: International Summits, Awards, Sports & Important Days 2026"
+    ];
+
+    var QUESTIONS = [
+      // =======================================================================
+      // SECTION I (Q. 1–25): UP SPECIAL, UP BUDGET 2026-27 & RAMSAR SITES
+      // =======================================================================
+      {
+        sec: 0,
+        q: "Consider the following statements regarding the Uttar Pradesh Annual Budget 2026–27:\n1. It was presented in the UP Legislative Assembly on 11 February 2026 by Finance Minister Suresh Kumar Khanna with a total outlay of ₹9,12,696.35 crore.\n2. It reiterates Uttar Pradesh's roadmap to achieve a USD 1 Trillion state economy by 2029.\nWhich of the statements given above is/are correct?",
+        opts: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: 2,
+        exp: "UP Finance Minister Suresh Kumar Khanna presented the historic ₹9,12,696.35 crore Budget 2026–27 on 11 February 2026, anchoring UP's USD 1 Trillion economy target by 2029."
+      },
+      {
+        sec: 0,
+        q: "In the Uttar Pradesh Budget 2026–27, an allocation of ₹34,000 crore has been proposed for which major greenfield highway project?",
+        opts: ["Bundelkhand–Vindhya Link Expressway", "Gorakhpur–Saharanpur Northeast Corridor", "Agra–Varanasi Riverfront Highway", "Jhansi–Noida Defence Expressway"],
+        ans: 1,
+        exp: "UP Budget 2026–27 earmarked ₹34,000 crore for the Gorakhpur–Saharanpur Northeast Corridor to seamlessly connect eastern and western UP."
+      },
+      {
+        sec: 0,
+        q: "Under the 'Sardar Vallabhbhai Patel Employment and Industrial Zone' scheme announced in UP Budget 2026–27 with an outlay of ₹575 crore, what is the primary objective?",
+        opts: ["Developing integrated industrial parks and employment hubs across districts for MSMEs and youth", "Constructing statues in every block", "Building private medical colleges only", "Subsidizing imported luxury vehicles"],
+        ans: 0,
+        exp: "With ₹575 crore allocated in UP Budget 2026–27, the Sardar Vallabhbhai Patel Employment and Industrial Zone develops district-level industrial infrastructure and local employment."
+      },
+      {
+        sec: 0,
+        q: "Under the 'Swami Vivekananda Youth Empowerment Scheme' in Uttar Pradesh, eligible higher-education students are provided with:",
+        opts: ["Free smartphones and tablets to bridge the digital divide", "Free international air tickets", "Zero-interest home loans", "Free diesel tractors"],
+        ans: 0,
+        exp: "The Swami Vivekananda Youth Empowerment Scheme distributes free smartphones and tablets to students enrolled in graduation, post-graduation, technical, and diploma courses in UP."
+      },
+      {
+        sec: 0,
+        q: "Under the 'Mukhyamantri Yuva Udyami Vikas Abhiyan' (CM Youth Entrepreneur Scheme) of Uttar Pradesh, young entrepreneurs are provided collateral-free, interest-free loans up to:",
+        opts: ["₹2 lakh", "₹5 lakh", "₹15 lakh", "₹25 lakh"],
+        ans: 1,
+        exp: "CM Youth Entrepreneur Scheme offers interest-free, collateral-free loans up to ₹5 lakh along with margin money subsidy to create 1 lakh micro-entrepreneurs annually in UP."
+      },
+      {
+        sec: 0,
+        q: "Which wetland in Ballia district of Uttar Pradesh was designated as India's 100th Ramsar Site on 5 June 2026 (World Environment Day)?",
+        opts: ["Bakhira Wildlife Sanctuary", "Surha Tal (Jai Prakash Narayan Bird Sanctuary)", "Sarsai Nawar Jheel", "Samaspur Bird Sanctuary"],
+        ans: 1,
+        exp: "Surha Tal (Jai Prakash Narayan Bird Sanctuary) in Ballia, UP was inscribed as India's milestone 100th Ramsar Wetland on 5 June 2026."
+      },
+      {
+        sec: 0,
+        q: "Which wetland in Mainpuri district of Uttar Pradesh was designated as UP's 14th Ramsar Site on 15 October 2026?",
+        opts: ["Sauj Jheel", "Nawabganj Bird Sanctuary", "Parvati Arga Bird Sanctuary", "Sandhi Bird Sanctuary"],
+        ans: 0,
+        exp: "Sauj Jheel in Mainpuri district was designated as Uttar Pradesh's 14th Ramsar Site on 15 October 2026, renowned for Sarus Crane conservation."
+      },
+      {
+        sec: 0,
+        q: "Match the following Ramsar Sites of Uttar Pradesh with their respective Districts:\nList-I (Ramsar Site)\nA. Patna Bird Sanctuary\nB. Shekha Jheel\nC. Haiderpur Wetland\nD. Sur Sarovar (Keetham Lake)\n\nList-II (District)\n1. Etah\n2. Aligarh\n3. Muzaffarnagar – Bijnor\n4. Agra",
+        opts: ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+        ans: 0,
+        exp: "Patna Bird Sanctuary is in Etah; Shekha Jheel is in Aligarh; Haiderpur Wetland spans Muzaffarnagar–Bijnor; Sur Sarovar is in Agra."
+      },
+      {
+        sec: 0,
+        q: "Which iconic Buddhist archaeological site in Uttar Pradesh was officially inscribed on the UNESCO World Heritage List in July 2026?",
+        opts: ["Kushinagar Mahaparinirvana Complex", "Ancient Buddhist Site of Sarnath (Varanasi)", "Shravasti Jetavana Monastery", "Kapilavastu Piprahwa Stupa"],
+        ans: 1,
+        exp: "The Ancient Buddhist Site of Sarnath (where Lord Buddha delivered his first sermon, Dhammachakkappavattana) was inscribed as a UNESCO World Heritage Site in July 2026."
+      },
+      {
+        sec: 0,
+        q: "How many districts are included in the 'Lucknow State Capital Region' (SCR) notified by the Uttar Pradesh Government?",
+        opts: ["4 districts", "6 districts", "8 districts", "10 districts"],
+        ans: 1,
+        exp: "The Lucknow SCR comprises 6 districts: Lucknow, Hardoi, Sitapur, Unnao, Rae Bareli, and Barabanki."
+      },
+      {
+        sec: 0,
+        q: "The 'Terai Elephant Reserve' (TER) in Uttar Pradesh, approved under Project Elephant, spans across which four districts?",
+        opts: ["Lakhimpur Kheri, Bahraich, Pilibhit, and Shahjahanpur", "Gorakhpur, Maharajganj, Kushinagar, and Deoria", "Chitrakoot, Banda, Mahoba, and Jhansi", "Saharanpur, Shamli, Muzaffarnagar, and Baghpat"],
+        ans: 0,
+        exp: "Terai Elephant Reserve covers over 3,049 sq km across Dudhwa and Pilibhit tiger landscapes in Lakhimpur Kheri, Bahraich, Pilibhit, and Shahjahanpur."
+      },
+      {
+        sec: 0,
+        q: "Which Tiger Reserve in Bundelkhand is Uttar Pradesh's 4th Tiger Reserve (after Dudhwa, Pilibhit, and Amangarh)?",
+        opts: ["Chandra Prabha Tiger Reserve", "Ranipur Tiger Reserve (Chitrakoot)", "Sohagi Barwa Tiger Reserve", "Katarniaghat Tiger Reserve"],
+        ans: 1,
+        exp: "Ranipur Tiger Reserve in Chitrakoot district is UP's 4th Tiger Reserve and a crucial tiger corridor connecting with Panna Tiger Reserve in MP."
+      },
+      {
+        sec: 0,
+        q: "According to Uttar Pradesh's maiden State Economic Survey (2025–26), UP ranks 1st in India in the production of which of the following commodities?",
+        opts: ["Sugarcane, Milk, Potatoes, Foodgrains, and Ethanol", "Coffee, Rubber, Tea, and Cardamom", "Iron Ore, Bauxite, and Copper", "Marine Fish and Cashew"],
+        ans: 0,
+        exp: "Uttar Pradesh holds the No. 1 position nationally in total foodgrains, sugarcane, milk, potatoes, and ethanol production."
+      },
+      {
+        sec: 0,
+        q: "Where is the South Asia Regional Centre of the International Potato Centre (CIP) being established in Uttar Pradesh?",
+        opts: ["Kanpur", "Singna, Agra", "Meerut", "Ayodhya"],
+        ans: 1,
+        exp: "The CIP South Asia Regional Centre is being set up at Singna in Agra district to boost potato and sweet-potato seed research."
+      },
+      {
+        sec: 0,
+        q: "Which city in Uttar Pradesh is being developed as India's first 'AI City'?",
+        opts: ["Noida", "Lucknow", "Varanasi", "Prayagraj"],
+        ans: 1,
+        exp: "Lucknow is being developed as India's first dedicated AI City to foster artificial intelligence startups, compute infrastructure, and talent."
+      },
+      {
+        sec: 0,
+        q: "With the operationalization of Noida International Airport (Jewar), Uttar Pradesh became the first state in India to have how many international airports?",
+        opts: ["3", "4", "5", "6"],
+        ans: 2,
+        exp: "UP is the first state with 5 international airports: Lucknow, Varanasi, Kushinagar, Ayodhya (Maharishi Valmiki), and Noida (Jewar)."
+      },
+      {
+        sec: 0,
+        q: "Consider the following pairs of UP Expressways and their terminal districts:\n1. Ganga Expressway — Meerut to Prayagraj\n2. Bundelkhand Expressway — Chitrakoot to Etawah\n3. Gorakhpur Link Expressway — Gorakhpur to Azamgarh\nHow many of the above pairs are correctly matched?",
+        opts: ["Only one", "Only two", "All three", "None"],
+        ans: 2,
+        exp: "All three pairs are accurately matched: Ganga Expressway (594 km), Bundelkhand Expressway (296 km), and Gorakhpur Link Expressway (91 km)."
+      },
+      {
+        sec: 0,
+        q: "Where is Uttar Pradesh's first 'PM MITRA' Mega Textile Park being established across 1,000 acres?",
+        opts: ["Varanasi", "Lucknow – Hardoi border (Attari)", "Moradabad", "Gorakhpur"],
+        ans: 1,
+        exp: "UP's PM MITRA Mega Textile & Apparel Park is being developed across 1,000 acres on the Lucknow–Hardoi border."
+      },
+      {
+        sec: 0,
+        q: "In Uttar Pradesh's 'One District One Product' (ODOP) scheme, which of the following pairs is INCORRECTLY matched?",
+        opts: ["Siddharthnagar — Kala Namak Rice", "Bhadohi — Carpets (Dari)", "Moradabad — Brassware", "Firozabad — Leather Footwear"],
+        ans: 3,
+        exp: "Firozabad is famous for Glassware (ODOP), whereas Agra and Kanpur are renowned for Leather products."
+      },
+      {
+        sec: 0,
+        q: "Which district of Uttar Pradesh has the highest per-capita income according to the UP Economic Survey 2025–26?",
+        opts: ["Lucknow", "Gautam Buddha Nagar", "Ghaziabad", "Varanasi"],
+        ans: 1,
+        exp: "Gautam Buddha Nagar (Noida) leads all 75 districts of Uttar Pradesh in per-capita income."
+      },
+      {
+        sec: 0,
+        q: "Where is India's first 'Night Safari' and Biodiversity Park being developed in Uttar Pradesh?",
+        opts: ["Kukrail Forest Area, Lucknow", "Sarnath, Varanasi", "Sur Sarovar, Agra", "Hastinapur, Meerut"],
+        ans: 0,
+        exp: "India's first Night Safari is being developed in the Kukrail forest area of Lucknow."
+      },
+      {
+        sec: 0,
+        q: "Under the 'Mukhyamantri Kanya Sumangala Yojana' in Uttar Pradesh, the total financial grant provided to a girl child from birth to graduation is:",
+        opts: ["₹15,000", "₹25,000", "₹50,000", "₹1,00,000"],
+        ans: 1,
+        exp: "The UP Government enhanced the grant under Mukhyamantri Kanya Sumangala Yojana from ₹15,000 to ₹25,000 across six educational stages."
+      },
+      {
+        sec: 0,
+        q: "Where is the world's first conservation and breeding centre for the critically endangered 'Asian King Vulture' (Jatayu) located in Uttar Pradesh?",
+        opts: ["Maharajganj (Campierganj Range)", "Etawah Lion Safari", "Chitrakoot", "Pilibhit"],
+        ans: 0,
+        exp: "The Jatayu Conservation and Breeding Centre (JCBC) is located in Maharajganj district of Uttar Pradesh."
+      },
+      {
+        sec: 0,
+        q: "In NITI Aayog's Export Preparedness Index, what rank did Uttar Pradesh achieve among Landlocked States?",
+        opts: ["1st", "2nd", "3rd", "4th"],
+        ans: 0,
+        exp: "Uttar Pradesh ranked 1st among all Landlocked States (and 4th overall in India) in NITI Aayog's Export Preparedness Index."
+      },
+      {
+        sec: 0,
+        q: "Which city in Uttar Pradesh hosts the annual 'Kashi Tamil Sangamam' celebrating ancient civilizational ties between North and South India?",
+        opts: ["Prayagraj", "Varanasi", "Ayodhya", "Mathura"],
+        ans: 1,
+        exp: "Kashi Tamil Sangamam is organized annually in Varanasi by the Ministry of Education under Ek Bharat Shreshtha Bharat."
+      },
+
+      // =======================================================================
+      // SECTION II (Q. 26–50): NATIONAL AFFAIRS, POLITY, CENSUS 2027 & UNION BUDGET 2026-27
+      // =======================================================================
+      {
+        sec: 1,
+        q: "Who is serving as the 15th Vice President of India and ex-officio Chairman of the Rajya Sabha in 2026?",
+        opts: ["Jagdeep Dhankhar", "C.P. Radhakrishnan", "M. Venkaiah Naidu", "Harivansh Narayan Singh"],
+        ans: 1,
+        exp: "C.P. Radhakrishnan assumed office as the Vice President of India and Chairman of the Rajya Sabha."
+      },
+      {
+        sec: 1,
+        q: "Who is serving as the Chief Justice of India (CJI) in 2026 (succeeding Justice B.R. Gavai)?",
+        opts: ["Justice Sanjiv Khanna", "Justice Surya Kant", "Justice Vikram Nath", "Justice J.B. Pardiwala"],
+        ans: 1,
+        exp: "Justice Surya Kant assumed office as the 53rd Chief Justice of India in November 2025 and serves through 2026."
+      },
+      {
+        sec: 1,
+        q: "Who is serving as the Chief Election Commissioner (CEC) of India in 2026?",
+        opts: ["Rajiv Kumar", "Gyanesh Kumar", "Sukhbir Singh Sandhu", "Vivek Joshi"],
+        ans: 1,
+        exp: "Gyanesh Kumar took charge as the 26th Chief Election Commissioner of India."
+      },
+      {
+        sec: 1,
+        q: "Who is serving as the Governor of the Reserve Bank of India (RBI) in 2026?",
+        opts: ["Shaktikanta Das", "Sanjay Malhotra", "T. Rabi Sankar", "Michael Patra"],
+        ans: 1,
+        exp: "Sanjay Malhotra serves as the 26th Governor of the Reserve Bank of India."
+      },
+      {
+        sec: 1,
+        q: "In July 2026, Parliament enacted the 'VB G RAM G Act' (Viksit Bharat Guarantee for Rozgar and Ajeevika Mission — Gramin) to modernize and replace which flagship rural employment statute?",
+        opts: ["PMGSY Act", "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), 2005", "National Food Security Act, 2013", "Panchayats (Extension to Scheduled Areas) Act, 1996"],
+        ans: 1,
+        exp: "Enacted in July 2026, the VB G RAM G Act replaced MGNREGA 2005 to align rural livelihood guarantees with durable asset creation and skill-linked employment."
+      },
+      {
+        sec: 1,
+        q: "With reference to the 16th Finance Commission (chaired by Dr. Arvind Panagariya) recommendations for the 2026–2031 award period, what annual fiscal deficit cap has been recommended for State Governments?",
+        opts: ["2.5% of GSDP", "3.0% of GSDP", "3.5% of GSDP", "4.5% of GSDP"],
+        ans: 1,
+        exp: "The 16th Finance Commission recommended a strict 3% of GSDP fiscal deficit limit for States during 2026–2031."
+      },
+      {
+        sec: 1,
+        q: "Consider the following statements regarding Census 2027 of India:\n1. Phase I (House Listing & Housing Census) began in 2026, followed by Population Enumeration in February 2027.\n2. It is the first Census in India to introduce a digital self-enumeration portal alongside comprehensive caste enumeration.\nWhich of the statements given above is/are correct?",
+        opts: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: 2,
+        exp: "Both statements are correct. Census 2027 (India's 16th census) features digital self-enumeration and comprehensive caste enumeration."
+      },
+      {
+        sec: 1,
+        q: "In May 2026, the Supreme Court of India delivered a landmark constitutional verdict upholding the Election Commission of India's authority to conduct 'Special Intensive Revision' (SIR) of electoral rolls under which Article of the Constitution?",
+        opts: ["Article 280", "Article 324", "Article 356", "Article 368"],
+        ans: 1,
+        exp: "In May 2026, the Supreme Court upheld the ECI's plenary powers under Article 324 (read with the Representation of the People Act, 1950) to conduct Special Intensive Revision of electoral rolls."
+      },
+      {
+        sec: 1,
+        q: "In the Union Budget 2026–27 presented on 1 February 2026, how many dedicated High-Speed Rail Corridors (growth connectors) were announced?",
+        opts: ["3", "5", "7", "10"],
+        ans: 2,
+        exp: "Union Budget 2026–27 announced 7 High-Speed Rail Corridors (including Mumbai–Pune, Pune–Hyderabad, Hyderabad–Bengaluru, Hyderabad–Chennai, Chennai–Bengaluru, Delhi–Varanasi, and Varanasi–Siliguri)."
+      },
+      {
+        sec: 1,
+        q: "In Union Budget 2026–27, a pilot scheme for upskilling 10,000 tourist guides in collaboration with IIMs was announced across how many iconic tourist sites?",
+        opts: ["10 sites", "20 iconic tourist sites", "50 sites", "100 sites"],
+        ans: 1,
+        exp: "Union Budget 2026–27 launched a pilot initiative to upskill 10,000 tourist guides across 20 iconic tourist destinations through standardized 12-week hybrid courses with IIMs."
+      },
+      {
+        sec: 1,
+        q: "What is the fiscal deficit target pegged in the Union Budget 2026–27 as a percentage of GDP?",
+        opts: ["4.8% of GDP", "4.4% of GDP", "4.3% of GDP", "3.9% of GDP"],
+        ans: 2,
+        exp: "Union Budget 2026–27 projected the fiscal deficit at 4.3% of GDP (down from 4.4% in FY 2025–26)."
+      },
+      {
+        sec: 1,
+        q: "According to the Economic Survey 2025–26, India's real GDP growth for FY 2026–27 is projected in the range of:",
+        opts: ["5.8% – 6.2%", "6.3% – 6.5%", "6.8% – 7.2%", "8.0% – 8.4%"],
+        ans: 2,
+        exp: "Economic Survey 2025–26 projected India's real GDP growth for FY 2026–27 between 6.8% and 7.2%."
+      },
+      {
+        sec: 1,
+        q: "Under the 'Biopharma SHAKTI' initiative announced in Union Budget 2026–27, what outlay has been earmarked over 5 years?",
+        opts: ["₹2,500 crore", "₹5,000 crore", "₹10,000 crore", "₹20,000 crore"],
+        ans: 2,
+        exp: "Biopharma SHAKTI has a ₹10,000 crore 5-year outlay to establish India as a global biopharma manufacturing hub."
+      },
+      {
+        sec: 1,
+        q: "Where was the 1st All India Official Language Conference (Akhil Bharatiya Rajbhasha Sammelan) 2026 held?",
+        opts: ["Varanasi", "New Delhi", "Bhopal", "Patna"],
+        ans: 1,
+        exp: "The 1st All India Official Language Conference 2026 was held in New Delhi by the Ministry of Home Affairs."
+      },
+      {
+        sec: 1,
+        q: "Who was appointed as the Director of the Intelligence Bureau (IB) in 2026?",
+        opts: ["Tapan Kumar Deka", "Mahesh Dixit", "Ravi Sinha", "Praveen Sood"],
+        ans: 1,
+        exp: "Senior IPS officer Mahesh Dixit was appointed as the Director of the Intelligence Bureau (IB) in 2026."
+      },
+      {
+        sec: 1,
+        q: "Under the Ayushman Bharat Vay Vandana scheme, all senior citizens aged 70 years and above are entitled to free annual health cover of ₹5 lakh irrespective of:",
+        opts: ["Indian citizenship", "Income or socio-economic status", "State of residence", "Aadhaar verification"],
+        ans: 1,
+        exp: "Ayushman Vay Vandana provides universal ₹5 lakh annual health cover to all senior citizens aged 70+ regardless of income."
+      },
+      {
+        sec: 1,
+        q: "The '106th Constitutional Amendment Act' (Nari Shakti Vandan Adhiniyam) reserves 33% seats for women in Lok Sabha and State Assemblies. Its implementation is linked to:",
+        opts: ["Immediate bye-elections", "Delimitation conducted after the first Census taken after commencement of the Act", "Approval of all Gram Sabhas", "Amendment of the Seventh Schedule"],
+        ans: 1,
+        exp: "Article 334A stipulates that women's reservation takes effect after delimitation based on the first post-commencement census."
+      },
+      {
+        sec: 1,
+        q: "Under the 'New Income Tax Regime', resident individuals earning up to what annual income pay ZERO income tax (after Section 87A rebate)?",
+        opts: ["₹7 lakh", "₹10 lakh", "₹12 lakh (₹12.75 lakh for salaried)", "₹15 lakh"],
+        ans: 2,
+        exp: "Individuals earning up to ₹12 lakh under the New Tax Regime pay zero income tax (₹12.75 lakh for salaried taxpayers with ₹75,000 standard deduction)."
+      },
+      {
+        sec: 1,
+        q: "What is the 'Gyan Bharatam Mission' launched by the Government of India?",
+        opts: ["A mission to survey, digitize, and conserve over 1 crore ancient manuscripts across India", "A satellite internet project", "A highway toll automation project", "A semiconductor foundry subsidy"],
+        ans: 0,
+        exp: "Gyan Bharatam Mission preserves and digitizes over 1 crore manuscripts held by institutions, museums, and private collectors."
+      },
+      {
+        sec: 1,
+        q: "Which five languages were granted 'Classical Language' status, bringing the total number of Classical Languages in India to 11?",
+        opts: ["Marathi, Pali, Prakrit, Assamese, and Bengali", "Bhojpuri, Maithili, Rajasthani, Tulu, and Konkani", "Gujarati, Punjabi, Sindhi, Kashmiri, and Dogri", "Manipuri, Nepali, Santali, Bodo, and Urdu"],
+        ans: 0,
+        exp: "Marathi, Pali, Prakrit, Assamese, and Bengali joined Tamil, Sanskrit, Telugu, Kannada, Malayalam, and Odia to make 11 Classical Languages."
+      },
+      {
+        sec: 1,
+        q: "Under the 'PM Surya Ghar: Muft Bijli Yojana', what is the maximum central subsidy for installing a 3 kW or higher residential rooftop solar plant?",
+        opts: ["₹30,000", "₹60,000", "₹78,000", "₹1,00,000"],
+        ans: 2,
+        exp: "Households receive ₹30,000 for 1 kW, ₹60,000 for 2 kW, and ₹78,000 for 3 kW or higher capacity rooftop solar installations."
+      },
+      {
+        sec: 1,
+        q: "Under the 'PM Vishwakarma' scheme covering 18 traditional artisan trades, collateral-free enterprise loans up to ₹3 lakh are provided at a concessional interest rate of:",
+        opts: ["0%", "5%", "8%", "10%"],
+        ans: 1,
+        exp: "PM Vishwakarma provides ₹1 lakh (1st tranche) and ₹2 lakh (2nd tranche) collateral-free credit at 5% interest."
+      },
+      {
+        sec: 1,
+        q: "What is the enhanced short-term loan limit under the 'Kisan Credit Card' (KCC) through the Modified Interest Subvention Scheme?",
+        opts: ["₹3 lakh", "₹5 lakh", "₹7 lakh", "₹10 lakh"],
+        ans: 1,
+        exp: "The KCC limit under the Modified Interest Subvention Scheme was raised from ₹3 lakh to ₹5 lakh."
+      },
+      {
+        sec: 1,
+        q: "Which state became the first state in independent India to enact and operationalize a Uniform Civil Code (UCC) under Article 44?",
+        opts: ["Goa", "Uttarakhand", "Gujarat", "Madhya Pradesh"],
+        ans: 1,
+        exp: "Uttarakhand became the first state in post-Independence India to implement a Uniform Civil Code."
+      },
+      {
+        sec: 1,
+        q: "The 'Urban Challenge Fund' with a ₹1 lakh crore corpus was established to finance bankable projects in:",
+        opts: ["Cities as Growth Hubs, Creative Redevelopment of Cities, and Water & Sanitation", "Rural village ponds only", "Overseas smart cities", "Private shopping malls"],
+        ans: 0,
+        exp: "The ₹1 lakh crore Urban Challenge Fund finances up to 25% of bankable urban transformation projects."
+      },
+
+      // =======================================================================
+      // SECTION III (Q. 51–75): DEFENCE, SCIENCE, SPACE & ENVIRONMENT 2026
+      // =======================================================================
+      {
+        sec: 2,
+        q: "Who was appointed on 30 June 2026 as the 31st Chief of the Army Staff (COAS) of the Indian Army and unveiled the 'VIJAY' roadmap?",
+        opts: ["Gen Upendra Dwivedi", "Gen Dhiraj Seth", "Gen Manoj Pande", "Gen N.S. Raja Subramani"],
+        ans: 1,
+        exp: "General Dhiraj Seth took over as the 31st Chief of the Army Staff on 30 June 2026 and launched the 'VIJAY' modernization roadmap."
+      },
+      {
+        sec: 2,
+        q: "Who was appointed as the Chief of Defence Staff (CDS) of the Indian Armed Forces in 2026 (succeeding Gen Anil Chauhan)?",
+        opts: ["Gen N.S. Raja Subramani", "Admiral Dinesh K. Tripathi", "Gen Dhiraj Seth", "Air Chief Marshal A.P. Singh"],
+        ans: 0,
+        exp: "General N.S. Raja Subramani assumed office as India's Chief of Defence Staff (CDS) in 2026."
+      },
+      {
+        sec: 2,
+        q: "Air Marshal Ashutosh Dixit has been in news in 2026 for serving in top leadership of the Indian Air Force as:",
+        opts: ["Vice Chief of the Air Staff / AOC-in-C Central Air Command", "Chief of Naval Staff", "Director General of DRDO", "Chairman of ISRO"],
+        ans: 0,
+        exp: "Air Marshal Ashutosh Dixit served as Vice Chief of the Air Staff and AOC-in-C Central Air Command, spearheading IAF indigenous modernization."
+      },
+      {
+        sec: 2,
+        q: "Where was the first 'Made-in-India' C-295 military transport aircraft rolled out from the Tata-Airbus Final Assembly Line (FAL) in 2026?",
+        opts: ["Bengaluru, Karnataka", "Vadodara, Gujarat", "Nagpur, Maharashtra", "Kanpur, Uttar Pradesh"],
+        ans: 1,
+        exp: "The first Made-in-India C-295 aircraft rolled out from the Tata-Airbus Final Assembly Line (FAL) in Vadodara, Gujarat in 2026."
+      },
+      {
+        sec: 2,
+        q: "Consider the following statements regarding 'INSV Kaundinya' in 2026:\n1. It is an ancient-style wooden stitched ship constructed without iron nails using coir rope and natural resins, inspired by 5th-century Ajanta cave paintings.\n2. In early 2026, it completed a historic maiden overseas voyage from Porbandar (Gujarat) to Muscat (Oman).\nWhich of the statements given above is/are correct?",
+        opts: ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+        ans: 2,
+        exp: "Both statements are correct. Inducted by the Indian Navy, INSV Kaundinya sailed from Porbandar to Muscat reviving ancient Indian Ocean maritime heritage."
+      },
+      {
+        sec: 2,
+        q: "INS Mahendragiri, delivered/commissioned into the Indian Navy, is the seventh and final stealth frigate of which indigenous warship class?",
+        opts: ["Project 15B (Visakhapatnam-class)", "Project 17A (Nilgiri-class stealth frigates)", "Project 75 (Kalvari-class)", "Kamorta-class corvettes"],
+        ans: 1,
+        exp: "INS Mahendragiri, built by Mazagon Dock Shipbuilders Limited (MDL), is the 7th stealth frigate of Project 17A (Nilgiri-class)."
+      },
+      {
+        sec: 2,
+        q: "The 'K-4' missile, tested from nuclear-powered ballistic missile submarine INS Arighaat, is a:",
+        opts: ["3,500-km range Submarine-Launched Ballistic Missile (SLBM)", "Supersonic anti-ship cruise missile", "Man-portable anti-tank missile", "Surface-to-air interceptor"],
+        ans: 0,
+        exp: "K-4 is an indigenous 3,500-km range nuclear-capable SLBM developed by DRDO for Arihant-class submarines."
+      },
+      {
+        sec: 2,
+        q: "What is 'RudraM-II', successfully flight-tested by DRDO?",
+        opts: ["An indigenous solid-propelled air-to-surface anti-radiation missile", "A nuclear-powered aircraft carrier", "A reusable space shuttle", "An anti-submarine torpedo"],
+        ans: 0,
+        exp: "RudraM-II is an indigenously developed air-to-surface anti-radiation missile engineered to destroy enemy radar installations."
+      },
+      {
+        sec: 2,
+        q: "Match the following 2026 Military Exercises with their Partner Nations / Venues:\nList-I (Exercise)\nA. Exercise MILAN 2026\nB. Exercise LAMITIYE 2026\nC. Exercise KHANJAR\nD. Exercise Udara Shakti 2026\n\nList-II (Partner / Host)\n1. Multilateral Naval Exercise at Visakhapatnam\n2. India – Seychelles (Army)\n3. India – Kyrgyzstan (Special Forces)\n4. India – Malaysia (Air Force)",
+        opts: ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+        ans: 0,
+        exp: "MILAN 2026 was hosted by Indian Navy at Visakhapatnam; LAMITIYE 2026 (India–Seychelles); KHANJAR (India–Kyrgyzstan); Udara Shakti 2026 (India–Malaysia)."
+      },
+      {
+        sec: 2,
+        q: "ISRO's 'SpaDeX' (Space Docking Experiment) mission made India which country in the world to achieve autonomous space docking and undocking in orbit?",
+        opts: ["2nd", "3rd", "4th (after USA, Russia, and China)", "5th"],
+        ans: 2,
+        exp: "With SpaDeX (SDX01 Chaser & SDX02 Target), India became the 4th country after the US, Russia, and China to master space docking."
+      },
+      {
+        sec: 2,
+        q: "Which Indian astronaut (IAF Group Captain) served as pilot on the historic 'Axiom-4' (Ax-4) mission to the International Space Station?",
+        opts: ["Group Captain Shubhanshu Shukla", "Group Captain Prashanth Balakrishnan Nair", "Group Captain Ajit Krishnan", "Group Captain Angad Pratap"],
+        ans: 0,
+        exp: "IAF Group Captain Shubhanshu Shukla flew to the International Space Station on the Axiom-4 mission, becoming the first Indian aboard the ISS."
+      },
+      {
+        sec: 2,
+        q: "Which organization received the 'National Anubhav Awards 2026' recognition for excellence in digital pensioner experience and knowledge documentation?",
+        opts: ["ISRO (Department of Space)", "Coal India Limited", "National Highways Authority of India", "Food Corporation of India"],
+        ans: 0,
+        exp: "The Department of Space / ISRO was honored at the National Anubhav Awards 2026 hosted by the Department of Pension & Pensioners' Welfare."
+      },
+      {
+        sec: 2,
+        q: "Tropical cyclones 'Cyclone Akvan' and 'Cyclone Murasu' in the North Indian Ocean basin (2026) were named respectively by which two WMO/ESCAP Panel countries?",
+        opts: ["Iran and Sri Lanka", "India and Oman", "Bangladesh and Maldives", "Thailand and Myanmar"],
+        ans: 0,
+        exp: "Under the WMO/ESCAP Tropical Cyclone naming list, 'Akvan' was proposed by Iran and 'Murasu' by Sri Lanka."
+      },
+      {
+        sec: 2,
+        q: "Which country hosted the UNFCCC COP31 Climate Change Conference in November 2026 (in Antalya)?",
+        opts: ["Brazil", "Türkiye (Turkey)", "Australia", "United Arab Emirates"],
+        ans: 1,
+        exp: "Türkiye hosted the UNFCCC COP31 Climate Conference in Antalya in November 2026."
+      },
+      {
+        sec: 2,
+        q: "What is 'Zorawar', jointly developed by DRDO and Larsen & Toubro (L&T)?",
+        opts: ["An indigenous 25-tonne light battle tank designed for high-altitude Himalayan warfare", "A supersonic fighter jet", "A stealth submarine", "A deep-ocean mining robot"],
+        ans: 0,
+        exp: "Zorawar is India's indigenous amphibious light tank developed for rapid high-altitude deployment in Ladakh."
+      },
+      {
+        sec: 2,
+        q: "What is 'Matsya-6000', developed by NIOT under the Deep Ocean Mission (Samudrayaan)?",
+        opts: ["A manned deep-sea submersible capable of carrying 3 aquanauts to a depth of 6,000 meters", "An autonomous underwater torpedo", "A deep-sea fishing trawler", "An offshore wind turbine"],
+        ans: 0,
+        exp: "Matsya-6000 is India's indigenous titanium-alloy manned submersible under Project Samudrayaan."
+      },
+      {
+        sec: 2,
+        q: "What is 'NexCAR19' (Actalycabtagene autoleucel), approved by CDSCO in India?",
+        opts: ["India's first indigenously developed CAR-T cell therapy for B-cell cancers (developed by IIT Bombay & Tata Memorial Centre)", "An electric sports car", "A 6G communication satellite", "A biofuel additive"],
+        ans: 0,
+        exp: "NexCAR19 is India's first indigenous humanized CD19-targeted CAR-T cell therapy."
+      },
+      {
+        sec: 2,
+        q: "The 'Bharatiya Antariksh Station' (BAS), India's indigenous modular space station, is targeted for full operationalization by:",
+        opts: ["2030", "2035", "2040", "2047"],
+        ans: 1,
+        exp: "ISRO plans to launch the first module (BAS-1) by 2028 and complete the 5-module Bharatiya Antariksh Station by 2035."
+      },
+      {
+        sec: 2,
+        q: "What is 'NISAR', the joint Earth-observation satellite mission developed by NASA and ISRO?",
+        opts: ["A dual-frequency (L-band and S-band) Synthetic Aperture Radar satellite mapping Earth's land and ice deformation", "A solar probe", "A Mars rover", "A lunar relay orbiter"],
+        ans: 0,
+        exp: "NISAR uses NASA's L-band and ISRO's S-band radars to map Earth's surface changes every 12 days."
+      },
+      {
+        sec: 2,
+        q: "Under the 'National Green Hydrogen Mission', what is India's annual green hydrogen production capacity target by 2030?",
+        opts: ["1 Million Metric Tonnes (MMT)", "5 Million Metric Tonnes (MMT)", "10 Million Metric Tonnes (MMT)", "25 Million Metric Tonnes (MMT)"],
+        ans: 1,
+        exp: "The National Green Hydrogen Mission targets at least 5 MMT per annum of green hydrogen production capacity by 2030."
+      },
+      {
+        sec: 2,
+        q: "Which is the first river-interlinking project implemented under the National Perspective Plan for Water Resources Development in India?",
+        opts: ["Kosi–Mechi Link", "Ken–Betwa Link Project", "Godavari–Cauvery Link", "Par–Tapi–Narmada Link"],
+        ans: 1,
+        exp: "The Ken–Betwa Link Project (transferring surplus water from Ken in MP to Betwa in UP's Bundelkhand) is the first project under the National River Linking Plan."
+      },
+      {
+        sec: 2,
+        q: "The 'International Big Cat Alliance' (IBCA), headquartered in New Delhi, is dedicated to conserving how many big cat species?",
+        opts: ["3 species", "5 species", "7 big cats (Tiger, Lion, Leopard, Snow Leopard, Cheetah, Jaguar, and Puma)", "10 species"],
+        ans: 2,
+        exp: "Headquartered in India, IBCA unites range countries to protect the world's 7 big cat species."
+      },
+      {
+        sec: 2,
+        q: "What is 'Akashteer', inducted into the Indian Army Corps of Air Defence?",
+        opts: ["An indigenous automated Air Defence Control and Reporting System built by BEL", "A high-altitude reconnaissance balloon", "An anti-submarine helicopter", "A coastal radar chain"],
+        ans: 0,
+        exp: "Project Akashteer integrates air defence radars and sensors into a real-time automated control system built by BEL."
+      },
+      {
+        sec: 2,
+        q: "What is 'INS Arighaat', commissioned into the Indian Navy at Visakhapatnam?",
+        opts: ["India's second indigenous nuclear-powered ballistic missile submarine (SSBN)", "An aircraft carrier", "A minesweeper", "A survey ship"],
+        ans: 0,
+        exp: "INS Arighaat is India's second Arihant-class nuclear-powered ballistic missile submarine."
+      },
+      {
+        sec: 2,
+        q: "The 'MISHTI' (Mangrove Initiative for Shoreline Habitats & Tangible Incomes) scheme focuses on:",
+        opts: ["Mangrove plantation and restoration along India's coastline and salt pan lands", "Sugarcane ethanol production", "Himalayan apple orchards", "Desert cactus farming"],
+        ans: 0,
+        exp: "MISHTI promotes mangrove afforestation across coastal states and UTs by converging MGNREGS and CAMPA funds."
+      },
+
+      // =======================================================================
+      // SECTION IV (Q. 76–100): INTERNATIONAL SUMMITS, AWARDS, SPORTS & DAYS 2026
+      // =======================================================================
+      {
+        sec: 3,
+        q: "Who was conferred the prestigious 'Lokmanya Tilak National Award' in Pune in August 2026 for his decisive contribution to national security and strategic statecraft?",
+        opts: ["Dr. S. Jaishankar", "National Security Advisor (NSA) Ajit Doval", "Gen Anil Chauhan", "Dr. S. Somanath"],
+        ans: 1,
+        exp: "National Security Advisor Ajit Doval was conferred the Lokmanya Tilak National Award in August 2026 on Lokmanya Tilak's death anniversary."
+      },
+      {
+        sec: 3,
+        q: "Which city was announced to host India's first 'Quad Business Leaders' Forum' to deepen Indo-Pacific supply chain and clean-tech investment?",
+        opts: ["New Delhi", "Mumbai", "Bengaluru", "Hyderabad"],
+        ans: 1,
+        exp: "Mumbai was selected to host India's first Quad Business Leaders' Forum bringing together industry leaders from India, USA, Japan, and Australia."
+      },
+      {
+        sec: 3,
+        q: "Which country assumed the BRICS Chairmanship in 2026 and hosted the 18th BRICS Leaders' Summit in New Delhi?",
+        opts: ["Brazil", "India", "South Africa", "Russia"],
+        ans: 1,
+        exp: "India held the 2026 BRICS Chairmanship and hosted the 18th BRICS Summit in New Delhi."
+      },
+      {
+        sec: 3,
+        q: "Which country hosted the 52nd G7 Leaders' Summit in June 2026 at Évian-les-Bains?",
+        opts: ["Canada", "France", "United States", "Japan"],
+        ans: 1,
+        exp: "France hosted the 52nd G7 Summit in June 2026 in Évian-les-Bains."
+      },
+      {
+        sec: 3,
+        q: "Which country held the G20 Presidency in 2026 and hosted the G20 Leaders' Summit in Miami, Florida?",
+        opts: ["South Africa", "United States", "United Kingdom", "Brazil"],
+        ans: 1,
+        exp: "The United States held the 2026 G20 Presidency and hosted the summit in Miami."
+      },
+      {
+        sec: 3,
+        q: "Which city hosted the 26th Shanghai Cooperation Organisation (SCO) Heads of State Summit in 2026?",
+        opts: ["Tianjin, China", "Bishkek, Kyrgyzstan", "Astana, Kazakhstan", "Tashkent, Uzbekistan"],
+        ans: 1,
+        exp: "Kyrgyzstan hosted the 26th SCO Heads of State Summit in Bishkek in 2026."
+      },
+      {
+        sec: 3,
+        q: "What is India's rank in the 'Global Innovation Index (GII) 2026' published by WIPO?",
+        opts: ["40th", "39th", "38th", "35th"],
+        ans: 2,
+        exp: "India ranked 38th in the Global Innovation Index (GII) 2026, retaining 1st place in Central and Southern Asia."
+      },
+      {
+        sec: 3,
+        q: "Match the following Global Indices (2025–2026) with India's Rank:\nList-I (Index)\nA. Global Hunger Index (GHI) 2026\nB. SDG Index 2026\nC. Corruption Perceptions Index (CPI) 2025\nD. World Happiness Report 2026\n\nList-II (India's Rank)\n1. 100th\n2. 94th\n3. 91st\n4. 116th",
+        opts: ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+        ans: 0,
+        exp: "Global Hunger Index 2026 = 100th; SDG Index 2026 = 94th; CPI 2025 = 91st; World Happiness Report 2026 = 116th."
+      },
+      {
+        sec: 3,
+        q: "In the 'Henley Passport Index 2026', which country topped the global ranking as the world's most powerful passport?",
+        opts: ["Japan", "Singapore", "Switzerland", "Germany"],
+        ans: 1,
+        exp: "Singapore retained the No. 1 rank in the Henley Passport Index 2026."
+      },
+      {
+        sec: 3,
+        q: "Where was the 'India AI Impact Summit 2026' hosted by India?",
+        opts: ["Mumbai", "Bharat Mandapam, New Delhi", "Bengaluru", "Gandhinagar"],
+        ans: 1,
+        exp: "India hosted the global AI Impact Summit 2026 at Bharat Mandapam, New Delhi."
+      },
+      {
+        sec: 3,
+        q: "Which country won the ICC Men's T20 World Cup 2026 co-hosted by India and Sri Lanka?",
+        opts: ["Australia", "India", "South Africa", "England"],
+        ans: 1,
+        exp: "India successfully defended its title to win the ICC Men's T20 World Cup 2026 co-hosted by India and Sri Lanka."
+      },
+      {
+        sec: 3,
+        q: "Which city hosted the 20th Asian Games in September–October 2026?",
+        opts: ["Hangzhou, China", "Aichi–Nagoya, Japan", "Doha, Qatar", "Riyadh, Saudi Arabia"],
+        ans: 1,
+        exp: "Aichi Prefecture and Nagoya city in Japan hosted the 2026 Asian Games."
+      },
+      {
+        sec: 3,
+        q: "Which city hosted the 23rd Commonwealth Games in July–August 2026?",
+        opts: ["Birmingham, England", "Glasgow, Scotland", "Victoria, Australia", "Kuala Lumpur, Malaysia"],
+        ans: 1,
+        exp: "Glasgow, Scotland hosted the 2026 Commonwealth Games."
+      },
+      {
+        sec: 3,
+        q: "Which three nations jointly hosted the 48-team FIFA World Cup 2026?",
+        opts: ["Spain, Portugal, and Morocco", "United States, Canada, and Mexico", "Argentina, Uruguay, and Paraguay", "Saudi Arabia, UAE, and Qatar"],
+        ans: 1,
+        exp: "The United States, Canada, and Mexico co-hosted the FIFA World Cup 2026."
+      },
+      {
+        sec: 3,
+        q: "Where were the 2026 Winter Olympic Games held in February 2026?",
+        opts: ["Beijing, China", "Milano–Cortina d'Ampezzo, Italy", "PyeongChang, South Korea", "Salt Lake City, USA"],
+        ans: 1,
+        exp: "Milan and Cortina d'Ampezzo in Italy hosted the 2026 Winter Olympics."
+      },
+      {
+        sec: 3,
+        q: "In Assam's Diphu (Karbi Anglong), thousands of performers created a Guinness World Record in 2026 performing which traditional Karbi folk dance?",
+        opts: ["Bihu", "Nimso Kerung", "Bagurumba", "Sattriya"],
+        ans: 1,
+        exp: "Over 5,000 Karbi dancers set a Guinness World Record in Diphu, Assam performing the traditional 'Nimso Kerung' dance."
+      },
+      {
+        sec: 3,
+        q: "Indian women's hockey forward Lalremsiami Hmar, honored with the Arjuna Award, hails from which state?",
+        opts: ["Manipur", "Mizoram", "Assam", "Jharkhand"],
+        ans: 1,
+        exp: "Lalremsiami Hmar is Mizoram's first female Olympian and a star forward of the Indian Women's Hockey Team."
+      },
+      {
+        sec: 3,
+        q: "Which Indian chess grandmaster became the youngest-ever World Chess Champion by defeating Ding Liren?",
+        opts: ["R. Praggnanandhaa", "D. Gukesh (Gukesh Dommaraju)", "Arjun Erigaisi", "Vidit Gujrathi"],
+        ans: 1,
+        exp: "D. Gukesh became the 18th and youngest World Chess Champion in history."
+      },
+      {
+        sec: 3,
+        q: "Who was crowned 'Miss Universe India 2026'?",
+        opts: ["Rhea Singha", "Kaziah Liz Mejo", "Nandini Gupta", "Sini Shetty"],
+        ans: 1,
+        exp: "Kaziah Liz Mejo won the title of Miss Universe India 2026."
+      },
+      {
+        sec: 3,
+        q: "Which cultural site in Assam (the royal mound-burial system of the Tai-Ahom dynasty) was inscribed as India's 43rd UNESCO World Heritage Site prior to Sarnath's 2026 inscription?",
+        opts: ["Majuli Island", "Charaideo Moidams", "Sivasagar Sivadol", "Kamakhya Temple"],
+        ans: 1,
+        exp: "Charaideo Moidams in Assam was inscribed as India's 43rd UNESCO World Heritage Site."
+      },
+      {
+        sec: 3,
+        q: "Who authored the book 'Why Bharat Matters' analyzing India's foreign policy and strategic autonomy?",
+        opts: ["Shashi Tharoor", "Dr. S. Jaishankar", "Hardeep Singh Puri", "Shivshankar Menon"],
+        ans: 1,
+        exp: "External Affairs Minister Dr. S. Jaishankar authored 'Why Bharat Matters'."
+      },
+      {
+        sec: 3,
+        q: "Match the following Important Days with their Dates:\nList-I (Day)\nA. National Voters' Day\nB. World Wetlands Day\nC. National Science Day\nD. National Space Day\n\nList-II (Date)\n1. 25 January\n2. 2 February\n3. 28 February\n4. 23 August",
+        opts: ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+        ans: 0,
+        exp: "National Voters' Day = 25 Jan; World Wetlands Day = 2 Feb; National Science Day = 28 Feb; National Space Day = 23 Aug."
+      },
+      {
+        sec: 3,
+        q: "What is the official theme of 'National Science Day 2026' (28 February)?",
+        opts: ["Women in Science: Catalysing Viksit Bharat", "Indigenous Technologies for Viksit Bharat", "Global Science for Global Wellbeing", "Future of STI"],
+        ans: 0,
+        exp: "National Science Day 2026 carried the theme 'Women in Science: Catalysing Viksit Bharat'."
+      },
+      {
+        sec: 3,
+        q: "On which date is 'Janajatiya Gaurav Divas' celebrated nationwide in India to honor Bhagwan Birsa Munda?",
+        opts: ["9 August", "15 November", "2 October", "14 April"],
+        ans: 1,
+        exp: "15 November is celebrated annually as Janajatiya Gaurav Divas marking the birth anniversary of Bhagwan Birsa Munda."
+      },
+      {
+        sec: 3,
+        q: "On which date is 'Parakram Diwas' observed every year in India to mark the birth anniversary of Netaji Subhas Chandra Bose?",
+        opts: ["12 January", "23 January", "30 January", "26 November"],
+        ans: 1,
+        exp: "23 January is observed across India as Parakram Diwas honoring Netaji Subhas Chandra Bose."
+      }
+    ];
+
+    // =========================================================================
+    // 2. STATE, STORAGE & MULTI-TAB REAL-TIME ENGINE
+    // =========================================================================
+    var urlParams = new URLSearchParams(window.location.search);
+    var initialRoom = (urlParams.get("room") || "UPPSC2026")
+      .trim()
+      .toUpperCase()
+      .replace(/[^A-Z0-9_-]/g, "") || "UPPSC2026";
+
+    var state = {
+      userName: "",
+      userId: "",
+      roomCode: initialRoom,
+      activeView: "dashboard",
+      currentQIndex: 0,
+      qTimeLeft: 40,
+      elapsedSec: 0,
+      answers: {}, // { [qIdx]: optIdx }
+      completed: false,
+      isPaused: false,
+      participants: {}, // { [userId]: { userId, name, answers, elapsedSec, completed, currentQIndex, updatedAt } }
+      presence: {} // { [userId]: { userId, name, currentQIndex, status, lastSeen } }
+    };
+
+    var qTimer = null;
+    var elapsedTimer = null;
+    var heartbeatTimer = null;
+    var bc = null;
+
+    function slugify(str) {
+      var s = String(str || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+      return s || "user_" + Date.now();
+    }
+
+    function esc(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function fmtTime(sec) {
+      var s = Math.max(0, Math.floor(sec || 0));
+      var m = String(Math.floor(s / 60)).padStart(2, "0");
+      var r = String(s % 60).padStart(2, "0");
+      return m + ":" + r;
+    }
+
+    function toast(msg, type) {
+      var stack = document.getElementById("toast-stack");
+      if (!stack) return;
+      var el = document.createElement("div");
+      el.className = "toast-item" + (type ? " " + type : "");
+      el.textContent = msg;
+      stack.appendChild(el);
+      setTimeout(function () {
+        el.style.opacity = "0";
+        el.style.transition = "opacity 0.25s ease";
+        setTimeout(function () { el.remove(); }, 250);
+      }, 2500);
+    }
+
+    function roomKey() {
+      return "uppsc_2026_100q_room_" + state.roomCode;
+    }
+
+    function personalKey() {
+      return "uppsc_2026_100q_me_" + state.roomCode + "_" + state.userId;
+    }
+
+    function readRoomStore() {
+      try {
+        return JSON.parse(localStorage.getItem(roomKey()) || '{"participants":{},"presence":{}}');
+      } catch (e) {
+        return { participants: {}, presence: {} };
+      }
+    }
+
+    function writeRoomStore(store) {
+      try {
+        localStorage.setItem(roomKey(), JSON.stringify(store));
+        if (bc) bc.postMessage({ type: "sync", room: state.roomCode });
+      } catch (e) {}
+    }
+
+    function saveMyProgress() {
+      if (!state.userId) return;
+      try {
+        localStorage.setItem(personalKey(), JSON.stringify({
+          currentQIndex: state.currentQIndex,
+          qTimeLeft: state.qTimeLeft,
+          elapsedSec: state.elapsedSec,
+          answers: state.answers,
+          completed: state.completed
+        }));
+      } catch (e) {}
+    }
+
+    function loadMyProgress() {
+      if (!state.userId) return;
+      try {
+        var raw = localStorage.getItem(personalKey());
+        if (raw) {
+          var p = JSON.parse(raw);
+          state.currentQIndex = Number(p.currentQIndex || 0);
+          state.qTimeLeft = Number(p.qTimeLeft > 0 && p.qTimeLeft <= 40 ? p.qTimeLeft : 40);
+          state.elapsedSec = Number(p.elapsedSec || 0);
+          state.answers = p.answers || {};
+          state.completed = Boolean(p.completed);
+        } else {
+          state.currentQIndex = 0;
+          state.qTimeLeft = 40;
+          state.elapsedSec = 0;
+          state.answers = {};
+          state.completed = false;
+        }
+      } catch (e) {
+        state.currentQIndex = 0;
+        state.qTimeLeft = 40;
+        state.elapsedSec = 0;
+        state.answers = {};
+        state.completed = false;
+      }
+    }
+
+    function syncMeToRoom() {
+      if (!state.userId || !state.userName) return;
+      var store = readRoomStore();
+      var rec = {
+        userId: state.userId,
+        name: state.userName,
+        answers: Object.assign({}, state.answers),
+        elapsedSec: state.elapsedSec,
+        completed: state.completed,
+        currentQIndex: state.currentQIndex,
+        updatedAt: Date.now()
+      };
+      store.participants[state.userId] = rec;
+      store.presence[state.userId] = {
+        userId: state.userId,
+        name: state.userName,
+        currentQIndex: state.currentQIndex,
+        status: state.activeView === "quiz" ? (state.isPaused ? "Paused" : "Live") : "Lobby",
+        lastSeen: Date.now()
+      };
+      writeRoomStore(store);
+      state.participants = store.participants;
+      state.presence = store.presence;
+      updateGlobalCounters();
+    }
+
+    function refreshFromRoomStore() {
+      var store = readRoomStore();
+      state.participants = store.participants || {};
+      state.presence = store.presence || {};
+      updateGlobalCounters();
+      renderPresenceBar();
+      if (state.activeView === "dashboard") renderDashboard();
+      if (state.activeView === "quiz") renderPollCard();
+      if (state.activeView === "scoreboard") renderScoreboard();
+    }
+
+    function updateGlobalCounters() {
+      var pCount = Object.keys(state.participants).length;
+      document.getElementById("hdr-room-code").textContent = state.roomCode;
+      document.getElementById("hdr-player-count").textContent = pCount;
+      document.getElementById("dash-participant-badge").textContent =
+        pCount + (pCount === 1 ? " participant in room" : " participants in room");
+    }
+
+    // =========================================================================
+    // 3. ENTRY, ROOM INVITE & PRESENCE BAR
+    // =========================================================================
+    function enterRoom() {
+      var nameInp = document.getElementById("inp-name");
+      var roomInp = document.getElementById("inp-room");
+      var errEl = document.getElementById("name-err");
+      var rawName = nameInp.value.trim();
+
+      if (!rawName) {
+        nameInp.classList.add("error");
+        errEl.classList.remove("hidden");
+        nameInp.focus();
+        toast("Please enter your Full Name first!", "error");
+        return false;
+      }
+
+      nameInp.classList.remove("error");
+      errEl.classList.add("hidden");
+
+      var cleanRoom = (roomInp.value.trim().toUpperCase().replace(/[^A-Z0-9_-]/g, "")) || "UPPSC2026";
+      var cleanId = slugify(rawName);
+      var changed = (state.userId !== cleanId || state.roomCode !== cleanRoom);
+
+      state.userName = rawName;
+      state.userId = cleanId;
+      state.roomCode = cleanRoom;
+      roomInp.value = cleanRoom;
+
+      try {
+        localStorage.setItem("uppsc_2026_last_name", rawName);
+      } catch (e) {}
+
+      if (changed) {
+        loadMyProgress();
+      }
+
+      refreshFromRoomStore();
+      syncMeToRoom();
+      renderPresenceBar();
+      renderDashboard();
+      toast("Joined room " + state.roomCode + " as " + state.userName, "success");
+      return true;
+    }
+
+    function copyInviteLink() {
+      var url = new URL(window.location.href);
+      url.searchParams.set("room", state.roomCode);
+      var shareUrl = url.toString();
+
+      var tmp = document.createElement("input");
+      tmp.value = shareUrl;
+      document.body.appendChild(tmp);
+      tmp.select();
+      try {
+        document.execCommand("copy");
+        toast("Invite link copied! Room: " + state.roomCode, "success");
+      } catch (e) {
+        toast("Share Room Code: " + state.roomCode);
+      }
+      tmp.remove();
+    }
+
+    function renderPresenceBar() {
+      var bar = document.getElementById("presence-bar");
+      var list = document.getElementById("live-users-list");
+      var countEl = document.getElementById("live-user-count");
+
+      if (!state.userName) {
+        bar.classList.add("hidden");
+        return;
+      }
+
+      bar.classList.remove("hidden");
+      var now = Date.now();
+      var online = Object.values(state.presence).filter(function (u) {
+        return u && u.name && (now - (u.lastSeen || 0) < 180000);
+      });
+
+      if (!online.some(function (u) { return u.userId === state.userId; })) {
+        online.unshift({
+          userId: state.userId,
+          name: state.userName,
+          currentQIndex: state.currentQIndex,
+          status: state.activeView === "quiz" ? "Live" : "Lobby"
+        });
+      }
+
+      countEl.textContent = online.length;
+      list.innerHTML = online.map(function (u) {
+        var isMe = u.userId === state.userId;
+        var tag = u.status === "Live" ? "Q." + ((u.currentQIndex || 0) + 1) : (u.status || "Lobby");
+        return '<span class="user-chip">' +
+          '<span style="width:7px;height:7px;border-radius:50%;background:' + (isMe ? '#818cf8' : '#34d399') + ';"></span>' +
+          '<span>' + esc(u.name) + (isMe ? ' (You)' : '') + '</span>' +
+          '<span style="opacity:0.75;font-size:10px;">• ' + esc(tag) + '</span>' +
+        '</span>';
+      }).join("");
+    }
+
+    // =========================================================================
+    // 4. DASHBOARD & PAUSE/RESUME CONTROLS
+    // =========================================================================
+    function renderDashboard() {
+      var ansCount = Object.keys(state.answers).length;
+      var hasSaved = state.userName && (ansCount > 0 || state.currentQIndex > 0 || state.elapsedSec > 0);
+      var savedBox = document.getElementById("saved-progress-box");
+      var startBox = document.getElementById("default-start-box");
+
+      if (hasSaved) {
+        savedBox.classList.remove("hidden");
+        startBox.classList.add("hidden");
+        document.getElementById("saved-progress-meta").textContent =
+          "Left off at Question " + (state.currentQIndex + 1) + " of 100 • " +
+          ansCount + " Answered • Question Timer: " + state.qTimeLeft + "s • Total Time: " + fmtTime(state.elapsedSec) +
+          (state.completed ? " (Submitted)" : "");
+      } else {
+        savedBox.classList.add("hidden");
+        startBox.classList.remove("hidden");
+      }
+    }
+
+    function startQuiz() {
+      if (!state.userName) {
+        if (!enterRoom()) return;
+      }
+      state.isPaused = false;
+      if (!state.qTimeLeft || state.qTimeLeft <= 0 || state.qTimeLeft > 40) {
+        state.qTimeLeft = 40;
+      }
+      showView("quiz");
+      syncMeToRoom();
+      startTimers();
+      renderPollCard();
+    }
+
+    function continueQuiz() {
+      startQuiz();
+      toast("Resumed from Question " + (state.currentQIndex + 1), "success");
+    }
+
+    function restartQuiz() {
+      if (!state.userName) {
+        if (!enterRoom()) return;
+      }
+      state.currentQIndex = 0;
+      state.qTimeLeft = 40;
+      state.elapsedSec = 0;
+      state.answers = {};
+      state.completed = false;
+      state.isPaused = false;
+      saveMyProgress();
+      showView("quiz");
+      syncMeToRoom();
+      startTimers();
+      renderPollCard();
+      toast("Started fresh from Question 1!", "success");
+    }
+
+    function pauseQuiz() {
+      state.isPaused = true;
+      saveMyProgress();
+      syncMeToRoom();
+      document.getElementById("modal-pause").classList.remove("hidden");
+    }
+
+    function resumeQuiz() {
+      state.isPaused = false;
+      document.getElementById("modal-pause").classList.add("hidden");
+      syncMeToRoom();
+    }
+
+    function saveAndExit() {
+      state.isPaused = false;
+      document.getElementById("modal-pause").classList.add("hidden");
+      saveMyProgress();
+      syncMeToRoom();
+      goDashboard();
+      toast("Progress saved! Continue anytime from Dashboard.", "success");
+    }
+
+    function restartQuizFromModal() {
+      document.getElementById("modal-pause").classList.add("hidden");
+      restartQuiz();
+    }
+
+    function submitQuiz() {
+      state.completed = true;
+      state.isPaused = false;
+      saveMyProgress();
+      stopTimers();
+      syncMeToRoom();
+      openScoreboard();
+      toast("Quiz submitted! Viewing Common Scoreboard.", "success");
+    }
+
+    // =========================================================================
+    // 5. TIMERS & TELEGRAM POLL INTERACTION
+    // =========================================================================
+    function startTimers() {
+      stopTimers();
+      qTimer = setInterval(function () {
+        if (state.activeView !== "quiz" || state.isPaused) return;
+        var qIdx = state.currentQIndex;
+        var answered = typeof state.answers[qIdx] === "number";
+        if (!answered && state.qTimeLeft > 0) {
+          state.qTimeLeft--;
+          updateTimerVisuals();
+          if (state.qTimeLeft === 0) {
+            saveMyProgress();
+            renderPollCard();
+            toast("40s expired for Q." + (qIdx + 1) + "! Answer revealed.");
+          }
+        }
+      }, 1000);
+
+      elapsedTimer = setInterval(function () {
+        if (state.activeView !== "quiz" || state.isPaused) return;
+        state.elapsedSec++;
+        document.getElementById("quiz-elapsed-label").textContent = fmtTime(state.elapsedSec);
+        if (state.elapsedSec % 5 === 0) {
+          saveMyProgress();
+        }
+      }, 1000);
+    }
+
+    function stopTimers() {
+      if (qTimer) { clearInterval(qTimer); qTimer = null; }
+      if (elapsedTimer) { clearInterval(elapsedTimer); elapsedTimer = null; }
+    }
+
+    function updateTimerVisuals() {
+      var pill = document.getElementById("poll-q-timer");
+      var bar = document.getElementById("poll-timer-bar");
+      var t = state.qTimeLeft;
+      pill.textContent = t + "s";
+      bar.style.width = Math.max(0, Math.min(100, (t / 40) * 100)) + "%";
+      if (t <= 10) {
+        pill.classList.add("danger");
+        bar.classList.add("danger");
+      } else {
+        pill.classList.remove("danger");
+        bar.classList.remove("danger");
+      }
+    }
+
+    function computeMetrics(participant) {
+      var ansMap = participant.answers || {};
+      var correct = 0;
+      var wrong = 0;
+      var skipped = 0;
+      var secRight = [0, 0, 0, 0];
+      var secWrong = [0, 0, 0, 0];
+
+      for (var i = 0; i < QUESTIONS.length; i++) {
+        var q = QUESTIONS[i];
+        var pick = ansMap[i];
+        if (typeof pick !== "number") {
+          skipped++;
+        } else if (pick === q.ans) {
+          correct++;
+          secRight[q.sec]++;
+        } else {
+          wrong++;
+          secWrong[q.sec]++;
+        }
+      }
+
+      var attempted = correct + wrong;
+      var netScore = Number((correct * 1.33 - wrong * 0.33).toFixed(2));
+      var accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+
+      return {
+        userId: participant.userId,
+        name: participant.name,
+        answers: ansMap,
+        elapsedSec: Number(participant.elapsedSec || 0),
+        completed: Boolean(participant.completed),
+        currentQIndex: Number(participant.currentQIndex || 0),
+        correct: correct,
+        wrong: wrong,
+        skipped: skipped,
+        attempted: attempted,
+        netScore: netScore,
+        accuracy: accuracy,
+        secRight: secRight,
+        secWrong: secWrong
+      };
+    }
+
+    function renderPollCard() {
+      var qIdx = state.currentQIndex;
+      var item = QUESTIONS[qIdx];
+      var myStats = computeMetrics({
+        userId: state.userId,
+        name: state.userName,
+        answers: state.answers,
+        elapsedSec: state.elapsedSec
+      });
+
+      document.getElementById("quiz-user-label").textContent = state.userName;
+      document.getElementById("quiz-elapsed-label").textContent = fmtTime(state.elapsedSec);
+      document.getElementById("quiz-score-label").textContent = myStats.netScore.toFixed(2);
+
+      // Highlight Active Section Tab
+      var tabBtns = document.querySelectorAll("#sec-tabs-bar .sec-tab-btn");
+      for (var t = 0; t < tabBtns.length; t++) {
+        var s = Number(tabBtns[t].getAttribute("data-sec"));
+        if (s === item.sec) {
+          tabBtns[t].classList.add("active");
+        } else {
+          tabBtns[t].classList.remove("active");
+        }
+      }
+
+      document.getElementById("poll-q-num").textContent = "Q. " + (qIdx + 1) + " / 100";
+      document.getElementById("poll-sec-name").textContent = SECTIONS[item.sec];
+      document.getElementById("poll-q-text").textContent = item.q;
+      updateTimerVisuals();
+
+      // Collect live votes from all participants in the room for this question
+      var votersByOpt = [[], [], [], []];
+      Object.values(state.participants).forEach(function (p) {
+        var pick = p.answers ? p.answers[qIdx] : undefined;
+        if (typeof pick === "number" && pick >= 0 && pick <= 3) {
+          votersByOpt[pick].push({ userId: p.userId, name: p.name });
+        }
+      });
+
+      var totalVotes = votersByOpt[0].length + votersByOpt[1].length + votersByOpt[2].length + votersByOpt[3].length;
+      var myPick = state.answers[qIdx];
+      var revealed = (typeof myPick === "number") || (state.qTimeLeft === 0);
+      var letters = ["A", "B", "C", "D"];
+
+      var optsHtml = item.opts.map(function (optText, idx) {
+        var voters = votersByOpt[idx];
+        var cnt = voters.length;
+        var barPct = totalVotes > 0 ? Math.round((cnt / totalVotes) * 100) : 0;
+        var isRight = idx === item.ans;
+        var isMine = myPick === idx;
+
+        var cardClass = "option-card";
+        var circleText = letters[idx];
+        if (revealed) {
+          cardClass += " revealed";
+          if (isRight) {
+            cardClass += " correct";
+            circleText = "✓";
+          } else if (isMine) {
+            cardClass += " wrong";
+            circleText = "✕";
+          }
+        }
+
+        var badgesHtml = "";
+        if (revealed) {
+          if (voters.length > 0) {
+            badgesHtml = voters.map(function (v) {
+              var isMe = v.userId === state.userId;
+              var cls = "voter-badge" + (isMe ? " me" : (isRight ? " right" : ""));
+              return '<span class="' + cls + '">👤 ' + esc(v.name) + (isMe ? " (You)" : "") + '</span>';
+            }).join("");
+          } else {
+            badgesHtml = '<span style="font-size:11px;color:#94a3b8;font-style:italic;">0 people</span>';
+          }
+        }
+
+        return '<div class="' + cardClass + '">' +
+          '<button type="button" class="option-btn" ' + (revealed ? "disabled" : 'onclick="selectOption(' + idx + ')"') + '>' +
+            (revealed ? '<div class="vote-bar-bg" style="width:' + barPct + '%;"></div>' : '') +
+            '<div class="opt-left">' +
+              '<span class="opt-circle">' + circleText + '</span>' +
+              '<span class="opt-label">' + esc(optText) + '</span>' +
+            '</div>' +
+            (revealed ? '<span class="vote-count-pill">' + cnt + (cnt === 1 ? ' person' : ' people') + '</span>' : '') +
+          '</button>' +
+          (revealed ? '<div class="voters-strip"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#64748b;">Selected by:</span>' + badgesHtml + '</div>' : '') +
+        '</div>';
+      }).join("");
+
+      document.getElementById("poll-options").innerHTML = optsHtml;
+
+      var expBox = document.getElementById("poll-exp-box");
+      if (revealed) {
+        expBox.classList.remove("hidden");
+        document.getElementById("poll-exp-text").textContent = item.exp;
+      } else {
+        expBox.classList.add("hidden");
+      }
+
+      document.getElementById("btn-next-q").textContent =
+        qIdx === 99 ? "Submit & View Scoreboard 🏆" : "Next Question →";
+
+      renderPalette();
+    }
+
+    function renderPalette() {
+      var answeredCount = Object.keys(state.answers).length;
+      document.getElementById("palette-summary").textContent = answeredCount + " / 100 Answered";
+      var grid = document.getElementById("palette-grid");
+      var html = "";
+      for (var i = 0; i < QUESTIONS.length; i++) {
+        var pick = state.answers[i];
+        var cls = "pal-btn";
+        if (typeof pick === "number") {
+          cls += (pick === QUESTIONS[i].ans) ? " correct" : " wrong";
+        }
+        if (i === state.currentQIndex) {
+          cls += " current";
+        }
+        html += '<button type="button" class="' + cls + '" onclick="jumpToQuestion(' + i + ')">' + (i + 1) + '</button>';
+      }
+      grid.innerHTML = html;
+    }
+
+    function selectOption(optIdx) {
+      var qIdx = state.currentQIndex;
+      if (typeof state.answers[qIdx] === "number") return;
+      state.answers[qIdx] = optIdx;
+      saveMyProgress();
+      syncMeToRoom();
+      renderPollCard();
+    }
+
+    function jumpToQuestion(idx) {
+      var nextIdx = Math.max(0, Math.min(99, idx));
+      state.currentQIndex = nextIdx;
+      if (typeof state.answers[nextIdx] !== "number") {
+        state.qTimeLeft = 40;
+      }
+      saveMyProgress();
+      syncMeToRoom();
+      renderPollCard();
+    }
+
+    function jumpToSection(secIdx) {
+      jumpToQuestion(secIdx * 25);
+    }
+
+    function nextQuestion() {
+      if (state.currentQIndex >= 99) {
+        submitQuiz();
+      } else {
+        jumpToQuestion(state.currentQIndex + 1);
+      }
+    }
+
+    function prevQuestion() {
+      jumpToQuestion(state.currentQIndex - 1);
+    }
+
+    // Simulate a live friend vote on the active question
+    var MOCK_FRIENDS = [
+      { id: "peer_aarav_sharma", name: "Aarav Sharma" },
+      { id: "peer_priya_verma", name: "Priya Verma" },
+      { id: "peer_rohan_tiwari", name: "Rohan Tiwari" },
+      { id: "peer_ananya_singh", name: "Ananya Singh" }
+    ];
+
+    function simulateFriendVote() {
+      var qIdx = state.currentQIndex;
+      var q = QUESTIONS[qIdx];
+      var store = readRoomStore();
+
+      var friend = null;
+      for (var i = 0; i < MOCK_FRIENDS.length; i++) {
+        var f = MOCK_FRIENDS[i];
+        if (!store.participants[f.id] || typeof store.participants[f.id].answers[qIdx] !== "number") {
+          friend = f;
+          break;
+        }
+      }
+      if (!friend) {
+        friend = MOCK_FRIENDS[Math.floor(Math.random() * MOCK_FRIENDS.length)];
+      }
+
+      var pick = Math.random() < 0.65 ? q.ans : Math.floor(Math.random() * 4);
+      var existing = store.participants[friend.id] || {
+        userId: friend.id,
+        name: friend.name,
+        answers: {},
+        elapsedSec: 35 + qIdx * 10,
+        completed: false,
+        currentQIndex: qIdx
+      };
+
+      existing.answers[qIdx] = pick;
+      existing.currentQIndex = qIdx;
+      existing.elapsedSec = (existing.elapsedSec || 30) + 8;
+      existing.updatedAt = Date.now();
+
+      store.participants[friend.id] = existing;
+      store.presence[friend.id] = {
+        userId: friend.id,
+        name: friend.name,
+        currentQIndex: qIdx,
+        status: "Live",
+        lastSeen: Date.now()
+      };
+
+      writeRoomStore(store);
+      refreshFromRoomStore();
+
+      var letter = ["A", "B", "C", "D"][pick];
+      toast(friend.name + " selected Option " + letter + " on Q." + (qIdx + 1));
+    }
+
+    // =========================================================================
+    // 6. COMMON RANKED SCOREBOARD & INDIVIDUAL FULL SCORECARDS
+    // =========================================================================
+    function getRankedParticipants() {
+      var list = Object.values(state.participants).map(computeMetrics);
+      list.sort(function (a, b) {
+        if (b.netScore !== a.netScore) return b.netScore - a.netScore;
+        if (b.correct !== a.correct) return b.correct - a.correct;
+        return a.elapsedSec - b.elapsedSec;
+      });
+      return list.map(function (p, idx) {
+        p.rank = idx + 1;
+        return p;
+      });
+    }
+
+    function renderScoreboard() {
+      var ranked = getRankedParticipants();
+      var tbody = document.getElementById("scoreboard-tbody");
+
+      if (ranked.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:32px;color:#64748b;font-weight:700;">No participants have attempted the quiz yet. Enter your name and start the test!</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = ranked.map(function (p) {
+        var isMe = p.userId === state.userId;
+        var rankCls = "rank-circle" + (p.rank <= 3 ? " rank-" + p.rank : "");
+        var statusHtml = p.completed
+          ? '<span style="padding:3px 9px;border-radius:999px;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;font-size:11px;font-weight:800;">Completed</span>'
+          : '<span style="padding:3px 9px;border-radius:999px;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;font-size:11px;font-weight:800;">Live • Q.' + (p.currentQIndex + 1) + '</span>';
+
+        return '<tr style="' + (isMe ? "background:#eef2ff;" : "") + '">' +
+          '<td><span class="' + rankCls + '">#' + p.rank + '</span></td>' +
+          '<td><strong>' + esc(p.name) + '</strong>' + (isMe ? ' <span style="color:#4f46e5;font-weight:800;">(You)</span>' : '') + '</td>' +
+          '<td>' + statusHtml + '</td>' +
+          '<td style="font-family:monospace;font-weight:700;">' + p.secRight.join(" / ") + '</td>' +
+          '<td style="font-weight:800;"><span style="color:#059669;">' + p.correct + '✓</span> / <span style="color:#dc2626;">' + p.wrong + '✕</span></td>' +
+          '<td style="font-weight:900;font-size:14px;">' + p.netScore.toFixed(2) + '</td>' +
+          '<td style="font-family:monospace;font-weight:700;">' + fmtTime(p.elapsedSec) + '</td>' +
+          '<td><button type="button" class="btn btn-dark" onclick="openScorecard(\'' + esc(p.userId) + '\')">View Full Scorecard</button></td>' +
+        '</tr>';
+      }).join("");
+    }
+
+    function openScorecard(userId) {
+      var ranked = getRankedParticipants();
+      var target = ranked.find(function (p) { return p.userId === userId; });
+      if (!target) {
+        toast("Scorecard not found.", "error");
+        return;
+      }
+
+      document.getElementById("sc-modal-title").textContent =
+        target.name + " — Rank #" + target.rank + " (" + target.netScore.toFixed(2) + " Marks)";
+
+      var secHtml = SECTIONS.map(function (title, sIdx) {
+        var r = target.secRight[sIdx];
+        var w = target.secWrong[sIdx];
+        var skip = 25 - r - w;
+        var pts = (r * 1.33 - w * 0.33).toFixed(2);
+        return '<div class="sec-info-box">' +
+          '<div style="font-size:11px;color:#4f46e5;font-weight:800;margin-bottom:3px;">' + esc(title) + '</div>' +
+          '<div style="display:flex;justify-content:space-between;font-size:12px;margin-top:6px;">' +
+            '<span style="color:#059669;">' + r + '✓</span>' +
+            '<span style="color:#dc2626;">' + w + '✕</span>' +
+            '<span style="color:#64748b;">' + skip + ' Skipped</span>' +
+            '<strong>' + pts + ' pts</strong>' +
+          '</div>' +
+        '</div>';
+      }).join("");
+
+      var letters = ["A", "B", "C", "D"];
+      var qRowsHtml = QUESTIONS.map(function (q, idx) {
+        var pick = target.answers[idx];
+        var attempted = typeof pick === "number";
+        var right = attempted && pick === q.ans;
+
+        var badge = !attempted
+          ? '<span style="padding:2px 8px;border-radius:6px;background:#f1f5f9;color:#475569;font-size:10px;font-weight:800;">Skipped</span>'
+          : right
+          ? '<span style="padding:2px 8px;border-radius:6px;background:#ecfdf5;color:#065f46;font-size:10px;font-weight:800;">Correct (+1.33)</span>'
+          : '<span style="padding:2px 8px;border-radius:6px;background:#fef2f2;color:#991b1b;font-size:10px;font-weight:800;">Wrong (-0.33)</span>';
+
+        var bg = !attempted ? "#ffffff" : (right ? "#f0fdf4" : "#fef2f2");
+        var bd = !attempted ? "#e2e8f0" : (right ? "#bbf7d0" : "#fecaca");
+
+        // Room peer vote summary for this question
+        var byOpt = [[], [], [], []];
+        Object.values(state.participants).forEach(function (rp) {
+          var rpPick = rp.answers ? rp.answers[idx] : undefined;
+          if (typeof rpPick === "number" && rpPick >= 0 && rpPick <= 3) {
+            byOpt[rpPick].push(rp.name);
+          }
+        });
+        var peerLine = byOpt.map(function (arr, oIdx) {
+          return arr.length > 0 ? "(" + letters[oIdx] + ") " + arr.length + ": " + arr.join(", ") : "";
+        }).filter(Boolean).join(" • ");
+
+        return '<div style="padding:12px 14px;border-radius:12px;border:1px solid ' + bd + ';background:' + bg + ';margin-bottom:10px;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px;">' +
+            '<strong style="font-size:12px;">Q.' + (idx + 1) + '</strong>' +
+            badge +
+          '</div>' +
+          '<div style="font-size:12.5px;font-weight:700;color:#0f172a;margin-bottom:6px;white-space:pre-line;">' + esc(q.q) + '</div>' +
+          '<div style="font-size:12px;display:flex;gap:14px;flex-wrap:wrap;">' +
+            '<span>' + esc(target.name) + '\'s Pick: <strong style="color:' + (!attempted ? "#64748b" : (right ? "#059669" : "#dc2626")) + ';">' +
+              (attempted ? letters[pick] + ". " + esc(q.opts[pick]) : "Not Attempted") + '</strong></span>' +
+            '<span>Right Answer: <strong style="color:#065f46;">' + letters[q.ans] + ". " + esc(q.opts[q.ans]) + '</strong></span>' +
+          '</div>' +
+          (peerLine ? '<div style="font-size:11px;color:#4f46e5;font-weight:700;margin-top:4px;">Room Votes: ' + esc(peerLine) + '</div>' : '') +
+        '</div>';
+      }).join("");
+
+      document.getElementById("sc-modal-body").innerHTML =
+        '<div class="kpi-grid">' +
+          '<div class="kpi-card" style="background:#fffbeb;border-color:#fde68a;"><div style="font-size:10px;font-weight:800;color:#92400e;">RANK</div><div style="font-size:22px;font-weight:900;color:#78350f;">#' + target.rank + '</div></div>' +
+          '<div class="kpi-card" style="background:#eef2ff;border-color:#c7d2fe;"><div style="font-size:10px;font-weight:800;color:#3730a3;">NET SCORE</div><div style="font-size:22px;font-weight:900;color:#312e81;">' + target.netScore.toFixed(2) + '</div></div>' +
+          '<div class="kpi-card" style="background:#ecfdf5;border-color:#a7f3d0;"><div style="font-size:10px;font-weight:800;color:#065f46;">RIGHT / WRONG</div><div style="font-size:18px;font-weight:900;color:#064e3b;">' + target.correct + '✓ / ' + target.wrong + '✕</div></div>' +
+          '<div class="kpi-card"><div style="font-size:10px;font-weight:800;color:#475569;">ACCURACY</div><div style="font-size:22px;font-weight:900;">' + target.accuracy + '%</div></div>' +
+          '<div class="kpi-card"><div style="font-size:10px;font-weight:800;color:#475569;">TIME TAKEN</div><div style="font-size:22px;font-weight:900;font-family:monospace;">' + fmtTime(target.elapsedSec) + '</div></div>' +
+        '</div>' +
+        '<h4 style="font-size:12px;font-weight:900;text-transform:uppercase;color:#334155;margin-bottom:8px;">Section-Wise Marks Breakdown (25 Qs Each)</h4>' +
+        '<div class="sections-grid" style="margin-top:0;margin-bottom:18px;">' + secHtml + '</div>' +
+        '<h4 style="font-size:12px;font-weight:900;text-transform:uppercase;color:#334155;margin-bottom:10px;">Complete 100-Question Answer Sheet</h4>' +
+        qRowsHtml;
+
+      document.getElementById("modal-scorecard").classList.remove("hidden");
+    }
+
+    function closeScorecard() {
+      document.getElementById("modal-scorecard").classList.add("hidden");
+    }
+
+    // =========================================================================
+    // 7. VIEW ROUTING & INITIALIZATION
+    // =========================================================================
+    function showView(name) {
+      state.activeView = name;
+      document.getElementById("view-dashboard").classList.toggle("hidden", name !== "dashboard");
+      document.getElementById("view-quiz").classList.toggle("hidden", name !== "quiz");
+      document.getElementById("view-scoreboard").classList.toggle("hidden", name !== "scoreboard");
+
+      if (name === "dashboard") {
+        stopTimers();
+        renderDashboard();
+      } else if (name === "scoreboard") {
+        renderScoreboard();
+      }
+    }
+
+    function goDashboard() {
+      if (state.activeView === "quiz") {
+        saveMyProgress();
+        syncMeToRoom();
+      }
+      showView("dashboard");
+      renderPresenceBar();
+    }
+
+    function openScoreboard() {
+      if (state.activeView === "quiz") {
+        saveMyProgress();
+        syncMeToRoom();
+      }
+      showView("scoreboard");
+      renderPresenceBar();
+    }
+
+    // Expose all handlers globally for inline onclick reliability
+    window.enterRoom = enterRoom;
+    window.copyInviteLink = copyInviteLink;
+    window.startQuiz = startQuiz;
+    window.continueQuiz = continueQuiz;
+    window.restartQuiz = restartQuiz;
+    window.pauseQuiz = pauseQuiz;
+    window.resumeQuiz = resumeQuiz;
+    window.saveAndExit = saveAndExit;
+    window.restartQuizFromModal = restartQuizFromModal;
+    window.submitQuiz = submitQuiz;
+    window.selectOption = selectOption;
+    window.jumpToQuestion = jumpToQuestion;
+    window.jumpToSection = jumpToSection;
+    window.nextQuestion = nextQuestion;
+    window.prevQuestion = prevQuestion;
+    window.simulateFriendVote = simulateFriendVote;
+    window.goDashboard = goDashboard;
+    window.openScoreboard = openScoreboard;
+    window.openScorecard = openScorecard;
+    window.closeScorecard = closeScorecard;
+
+    // Initialize on load
+    (function init() {
+      document.getElementById("inp-room").value = state.roomCode;
+      document.getElementById("hdr-room-code").textContent = state.roomCode;
+
+      if (typeof BroadcastChannel !== "undefined") {
+        bc = new BroadcastChannel("uppsc_2026_100q_channel");
+        bc.onmessage = function (ev) {
+          if (ev.data && ev.data.room === state.roomCode) {
+            refreshFromRoomStore();
+          }
+        };
+      }
+
+      window.addEventListener("storage", function (e) {
+        if (e.key === roomKey()) {
+          refreshFromRoomStore();
+        }
+      });
+
+      window.addEventListener("beforeunload", function () {
+        saveMyProgress();
+      });
+
+      document.getElementById("inp-name").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          enterRoom();
+        }
+      });
+
+      try {
+        var last = localStorage.getItem("uppsc_2026_last_name");
+        if (last) {
+          document.getElementById("inp-name").value = last;
+          state.userName = last;
+          state.userId = slugify(last);
+          loadMyProgress();
+        }
+      } catch (e) {}
+
+      refreshFromRoomStore();
+      if (state.userName) {
+        syncMeToRoom();
+        renderPresenceBar();
+        renderDashboard();
+      }
+
+      heartbeatTimer = setInterval(function () {
+        if (state.userName) syncMeToRoom();
+      }, 20000);
+    })();
+  </script>
+</body>
+</html>
